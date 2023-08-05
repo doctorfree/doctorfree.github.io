@@ -18,7 +18,7 @@ The following open source projects can be managed by Neoman:
 - [Kitty](https://sw.kovidgoyal.net/kitty)
 - [Neofetch](https://github.com/dylanaraps/neofetch)
 - [Newsboat](https://newsboat.org)
-- Ascii Games
+- [Ascii Games](https://github.com/doctorfree/asciigames#readme)
 - [w3m](https://w3m.sourceforge.net)
 - [tmux](https://github.com/tmux/tmux/wiki)
 
