@@ -23,4 +23,4 @@ The following open source projects can be managed by Neoman:
 - [tmux](https://github.com/tmux/tmux/wiki)
 
 > This project is in early development and not yet ready to install
-> {: .prompt-warning }
+{: .prompt-warning }
