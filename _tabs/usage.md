@@ -1,16 +1,18 @@
 ---
-# the default layout is 'page'
+layout: post
+post_style: page
+toc: true
 icon: fas fa-user-circle
 order: 2
 ---
 
 The `neoman` project can be used to install, initialize, configure, and manage
 
-| **Neoman**                           | **Managed**                                | **Project**                                    | **Configs**                                    |
-| ------------------------------------ | ------------------------------------------ | ---------------------------------------------- | ---------------------------------------------- |
+| **Neoman**                           |                **Managed**                 |                  **Project**                   |                                    **Configs** |
+| :----------------------------------- | :----------------------------------------: | :--------------------------------------------: | ---------------------------------------------: |
 | [Asciiville](#asciiville-management) | [MirrorCommand](#mirrorcommand-management) | [MusicPlayerPlus](#musicplayerplus-management) | [RoonCommandLine](#rooncommandline-management) |
-| [Neovim](#neovim-management)         | [NeoMutt](#neomutt-management)             | [Newsboat](#newsboat-management)               | [Btop++](#btop-management)                     |
-| [Kitty](#kitty-management)           | [Neofetch](#neofetch-management)           | [W3m](#w3m-management)                         | [tmux](#tmux-management)                       |
+| [Neovim](#neovim-management)         |       [NeoMutt](#neomutt-management)       |        [Newsboat](#newsboat-management)        |                     [Btop++](#btop-management) |
+| [Kitty](#kitty-management)           |      [Neofetch](#neofetch-management)      |             [W3m](#w3m-management)             |                       [tmux](#tmux-management) |
 
 These are powerful, configurable, extensible, character-based programs. Neoman
 automates the installation, initialization, configuration, and management of
