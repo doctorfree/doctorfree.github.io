@@ -27,6 +27,9 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: ""
 url: "https://neoman.dev"
 
+plugins:
+  - jekyll-sitemap
+
 github:
   username: doctorfree/neoman # change to your github username
 
