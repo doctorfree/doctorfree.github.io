@@ -8,41 +8,40 @@ theme: jekyll-theme-chirpy
 # otherwise, the layout language will use the default value of 'en'.
 lang: en
 
-# Change to your timezone › https://zones.arilyn.cc
-timezone:
+# Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
+timezone: America/Los_Angeles
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Chirpy # the main title
+title: Asciiville
 
-tagline: A text-focused Jekyll theme # it will display as the subtitle
+tagline: Ascii Art and Utilities # it will display as the sub-title
 
-description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+description: >- # this means to ignore newlines until "baseurl:"
+  Asciiville is where you go for ASCII Art, animations, and utilities.
+  Asciiville includes nearly 1,000 works of ASCII and ANSI Art!
+baseurl: ""
+url: "https://asciiville.dev"
 
-# Fill in the protocol & hostname for your site.
-# E.g. 'https://username.github.io', note that it does not end with a '/'.
-url: ""
+plugins:
+  - jekyll-sitemap
 
 github:
-  username: github_username # change to your GitHub username
+  username: doctorfree # change to your github username
 
 twitter:
-  username: twitter_username # change to your Twitter username
+  username: ronrecord # change to your twitter username
 
 social:
-  # Change to your full name.
-  # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: your_full_name
-  email: example@domain.com # change to your email address
+  name: Ronald Record
+  email: ronaldrecord@gmail.com
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your Twitter homepage
-    - https://github.com/username # change to your GitHub homepage
-    # Uncomment below to add more social links
-    # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/username
+    - https://github.com/doctorfree
+    - https://twitter.com/ronrecord
+    - https://www.facebook.com/ronrecord
+    - https://www.linkedin.com/in/ronrecord
 
 # Site Verification Settings
 webmaster_verifications:
@@ -98,7 +97,7 @@ theme_mode: # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: "/assets/asciiville.png"
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
@@ -108,21 +107,20 @@ social_preview_image: # string, local or CORS resources
 toc: true
 
 comments:
-  # Global switch for the post-comment system. Keeping it empty means disabled.
-  provider: # [disqus | utterances | giscus]
-  # The provider options are as follows:
+  provider: "giscus" # The global switch for posts comments, e.g., 'disqus'. Empty means disable
+  # The active options are as follows:
   disqus:
-    shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
+    shortname: "SHORTNAME" # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
   # utterances settings › https://utteranc.es/
   utterances:
     repo: # <gh-username>/<repo>
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: # <gh-username>/<repo>
-    repo_id:
-    category:
-    category_id:
+    repo: doctorfree/asciiville.dev
+    repo_id: R_kgDOKD0y3g
+    category: General
+    category_id: DIC_kwDOKD0y3s4CYZQL
     mapping: # optional, default to 'pathname'
     strict: # optional, default to '0'
     input_position: # optional, default to 'bottom'
@@ -208,11 +206,15 @@ compress_html:
 exclude:
   - "*.gem"
   - "*.gemspec"
+  - "*.sh"
   - docs
   - tools
+  - CHANGELOG.md
   - README.md
   - LICENSE
   - purgecss.js
+  - rollup.config.js
+  - node_modules
   - "*.config.js"
   - "package*.json"
 

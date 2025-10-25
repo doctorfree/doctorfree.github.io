@@ -1,4 +1,1052 @@
 ---
-layout: home
-# Index page
+layout: post
+toc: true
+post_style: page
 ---
+
+<div data-align="center">
+  <p>
+    <img
+      src="https://raw.githubusercontent.com/wiki/doctorfree/Asciiville/pics/asciiville-epic.png"
+      style="width: 800px; height: 160px"
+      alt="asciiville"
+    />
+  </p>
+</div>
+<p>
+  Asciiville is where you go for ASCII Art, animations, and utilities. The
+  Asciiville project provides integration and extension of several packages as
+  well as providing convenience commands to invoke a variety of components used
+  to display ASCII Art, animations, and text based utilities to perform common
+  operations in a text-only environment.
+</p>
+<p>Asciiville includes nearly 1,000 works of ASCII and ANSI Art!</p>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+<details>
+  <summary>
+    <strong>Click here to expand/collapse</strong>
+  </summary>
+  <ol type="1">
+    <li><a href="#overview">Overview</a></li>
+    <li>
+      <a href="#asciiville-ascii-art-galleries"
+        >Asciiville Ascii Art Galleries</a
+      >
+    </li>
+    <li><a href="#asciiville-commands">Asciiville Commands</a></li>
+    <li><a href="#quickstart">Quickstart</a></li>
+    <li><a href="#requirements">Requirements</a></li>
+    <li>
+      <a href="#installation">Installation</a>
+      <ol type="1">
+        <li>
+          <a
+            href="https://asciiville.dev/install#arch-linux-package-installation"
+            >Arch Linux package installation</a
+          >
+        </li>
+        <li>
+          <a href="https://asciiville.dev/install#debian-package-installation"
+            >Debian package installation</a
+          >
+        </li>
+        <li>
+          <a href="https://asciiville.dev/install#rpm-package-installation"
+            >RPM package installation</a
+          >
+        </li>
+        <li>
+          <a href="https://asciiville.dev/install#manual-installation"
+            >Manual installation</a
+          >
+        </li>
+        <li>
+          <a href="https://asciiville.dev/install#bb-aalib-demo"
+            >BB AAlib Demo</a
+          >
+        </li>
+      </ol>
+    </li>
+    <li>
+      <a href="https://asciiville.dev/configuration">Configuration</a>
+      <ol type="1">
+        <li>
+          <a
+            href="https://asciiville.dev/configuration#asciiville-configuration"
+            >Asciiville configuration</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://asciiville.dev/configuration#asciiville-utilities-configuration"
+            >Asciiville utilities configuration</a
+          >
+          <ol type="1">
+            <li>
+              <a
+                href="https://asciiville.dev/configuration#kitty-ssh-terminfo-configuration"
+                >Kitty SSH terminfo configuration</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://asciiville.dev/configuration#neovim-text-editor-configuration"
+                >Neovim text editor configuration</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://asciiville.dev/configuration#newsboat-rss-feed-reader-configuration"
+                >Newsboat RSS feed reader configuration</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://asciiville.dev/configuration#neomutt-email-configuration"
+                >NeoMutt email configuration</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://asciiville.dev/configuration#mutt-email-configuration"
+                >Mutt email configuration</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://asciiville.dev/configuration#tuir-reddit-client-configuration"
+                >Tuir Reddit client configuration</a
+              >
+            </li>
+          </ol>
+        </li>
+        <li>
+          <a href="https://asciiville.dev/configuration#homebrew-administration"
+            >Homebrew administration</a
+          >
+        </li>
+      </ol>
+    </li>
+    <li>
+      <a href="https://asciiville.dev/documentation">Documentation</a>
+      <ol type="1">
+        <li>
+          <a href="https://asciiville.dev/documentation#aewan-readme"
+            >Aewan README</a
+          >
+        </li>
+        <li>
+          <a href="https://asciiville.dev/documentation#btop++-readme"
+            >Btop++ README</a
+          >
+        </li>
+        <li>
+          <a href="https://asciiville.dev/documentation#cbftp-readme"
+            >Cbftp README</a
+          >
+        </li>
+        <li>
+          <a href="https://asciiville.dev/documentation#ddgr-readme"
+            >Ddgr README</a
+          >
+        </li>
+        <li>
+          <a href="https://asciiville.dev/documentation#man-pages">Man Pages</a>
+        </li>
+        <li><a href="https://asciiville.dev/documentation#usage">Usage</a></li>
+        <li>
+          <a href="https://asciiville.dev/documentation#example-invocations"
+            >Example invocations</a
+          >
+        </li>
+      </ol>
+    </li>
+    <li>
+      <a href="#adding-an-ascii-art-gallery">Adding an ASCII Art Gallery</a>
+      <ol type="1">
+        <li><a href="#generating-ascii-art">Generating ASCII Art</a></li>
+        <li>
+          <a href="#adding-and-viewing-art-galleries"
+            >Adding and Viewing Art Galleries</a
+          >
+        </li>
+        <li><a href="#ascii-art-tools">ASCII Art Tools</a></li>
+        <li><a href="#ascii-art-online">ASCII Art Online</a></li>
+      </ol>
+    </li>
+    <li><a href="#figlet-fonts">Figlet fonts</a></li>
+    <li><a href="https://asciiville.dev/build">Build</a></li>
+    <li><a href="#removal">Removal</a></li>
+    <li>
+      <a href="#what-is-ascii">What is ASCII</a>
+      <ol type="1">
+        <li><a href="#ascii-art-history">ASCII Art History</a></li>
+      </ol>
+    </li>
+    <li><a href="#videos">Videos</a></li>
+    <li><a href="#screenshots">Screenshots</a></li>
+    <li>
+      <a href="#contributing">Contributing</a>
+      <ol type="1">
+        <li>
+          <a href="#testing-and-issue-reporting">Testing and Issue Reporting</a>
+        </li>
+        <li><a href="#sponsor-asciiville">Sponsor Asciiville</a></li>
+        <li>
+          <a href="#contribute-to-development">Contribute to Development</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#connect">Connect</a></li>
+  </ol>
+</details>
+<h2 id="overview">Overview</h2>
+See the <a href="https://asciiville.dev/features">Features section</a>
+for an overview of the features and facilities available in Asciiville.
+<h2 id="asciiville-ascii-art-galleries">Asciiville Ascii Art Galleries</h2>
+<p>
+  The Asciiville project includes many curated Ascii Art galleries. These
+  include hundreds of high resolution Ascii Art files created by Asciiville
+  author and artist, Dr. Ronald Joe Record. The Asciiville package, when
+  installed, provides the following Ascii Art galleries located in the default
+  Ascii Art Gallery folder <code>/usr/share/asciiville/art/</code>:
+</p>
+<p>
+  <code>Art</code> - A collection of fine art transformed into Ascii Art
+  <br /><code>Doctorwhen</code> - Some of Doctor When&#39;s fantastic art
+  <br /><code>Dragonflies</code> - Photos of dragonflies converted to Ascii
+  using Asciiville tools <br /><code>Fractals</code> - Images of fractals
+  converted to Ascii using Asciiville tools <br /><code>Friends</code> - Photos
+  of friends and family converted to Ascii using Asciiville tools <br /><code
+    >Iterated</code
+  >
+  - Images made with iteration converted to Ascii using Asciiville tools
+  <br /><code>Lyapunov</code> - Lyapunov fractals converted to Ascii using
+  Asciiville tools <br /><code>Nature</code> - Photos of nature converted to
+  Ascii using Asciiville tools <br /><code>Owls</code> - Photos of owls
+  converted to Ascii using Asciiville tools <br /><code>Space</code> - Photos of
+  space converted to Ascii using Asciiville tools <br /><code>Vintage</code> -
+  Traditional Ascii Art <br /><code>Wallpapers</code> - Pretty wallpapers
+  converted to Ascii using Asciiville tools <br /><code>Waterfalls</code> -
+  Photos of waterfalls converted to Ascii using Asciiville tools
+</p>
+<p>
+  All of these galleries may be viewed using the menus in the
+  <code>asciiville</code> command. Asciiville users can add their own custom
+  galleries using the conversion and generation tools provided by Asciiville.
+  Custom menus added to the Ascii Art Gallery folder will automatically appear
+  in the <code>asciiville</code> menu selections.
+</p>
+<p>
+  Beginning with Asciiville version 1.4.0 release 2, Asciiville will ship with
+  gzip compressed ascii art gallery files. If you wish to compress your current
+  pre-1.4.0r2 Asciiville ascii art gallery files then download and install
+  <a
+    href="https://github.com/doctorfree/Asciiville/blob/main/bin/show_ascii_art" target="_blank" rel="noopener"
+    >show_ascii_art</a
+  >. Install the updated <code>show_ascii_art</code> by copying it to
+  <code>/usr/bin/</code> with the command
+  <code>sudo cp show_ascii_art /usr/bin</code>.
+</p>
+<p>
+  When creating custom ascii art galleries for use with Asciiville, compression
+  is optional but can be used to reduce the disk size of ascii art files. When
+  choosing to compress ascii art files, a gallery’s files must be compressed
+  with <code>gzip</code>:
+</p>
+<pre class="console"><code>
+    cd /path/to/gallery
+    sudo gzip *.asc</code></pre>
+<details>
+  <summary>
+    <strong>Click here to View a Gallery of Ascii Art</strong>
+  </summary>
+  <div data-align="center">
+    <p>
+      <img
+        src="https://raw.githubusercontent.com/wiki/doctorfree/Asciiville/pics/NYT.jpg"
+        style="width: 700px; height: 450px"
+        alt="NYT"
+      />
+    </p>
+    <p>
+      <img
+        src="https://raw.githubusercontent.com/wiki/doctorfree/Asciiville/pics/phone.jpg"
+        style="width: 300px; height: 200px"
+        alt="phone"
+      />
+    </p>
+    <p>
+      <img
+        src="https://raw.githubusercontent.com/wiki/doctorfree/Asciiville/pics/george-herbert-easter-wings.jpg"
+        style="width: 700px; height: 1000px"
+        alt="easter"
+      />
+    </p>
+    <p>
+      <img
+        src="https://raw.githubusercontent.com/wiki/doctorfree/Asciiville/pics/hieroglyphics.jpg"
+        style="width: 512px; height: 336px"
+        alt="hieroglyphics"
+      />
+    </p>
+    <p>
+      <img
+        src="https://raw.githubusercontent.com/wiki/doctorfree/Asciiville/pics/rcanterbury.jpg"
+        style="width: 400px; height: 512px"
+        alt="canterbury"
+      />
+    </p>
+    <p>
+      <img
+        src="https://raw.githubusercontent.com/wiki/doctorfree/Asciiville/pics/typewriter-art.jpg"
+        style="width: 600px; height: 800px"
+        alt="typewriter"
+      />
+    </p>
+    <p>
+      <img
+        src="https://raw.githubusercontent.com/wiki/doctorfree/Asciiville/pics/todd.jpg"
+        style="width: 800px; height: 1000px"
+        alt="todd"
+      />
+    </p>
+    <p>
+      <img
+        src="https://raw.githubusercontent.com/wiki/doctorfree/Asciiville/pics/jesus.jpg"
+        style="width: 1000px; height: 1300px"
+        alt="jesus"
+      />
+    </p>
+    <p>
+      <img
+        src="https://raw.githubusercontent.com/wiki/doctorfree/Asciiville/pics/jgseagle.jpg"
+        style="width: 340px; height: 412px"
+        alt="jgseagle"
+      />
+    </p>
+    <p>
+      <img
+        src="https://raw.githubusercontent.com/wiki/doctorfree/Asciiville/pics/tux.png"
+        style="width: 477px; height: 662px"
+        alt="tux"
+      />
+    </p>
+    <p>
+      <img
+        src="https://raw.githubusercontent.com/wiki/doctorfree/Asciiville/pics/julia.png"
+        style="width: 569px; height: 667px"
+        alt="julia"
+      />
+    </p>
+    <p>
+      <img
+        src="https://raw.githubusercontent.com/wiki/doctorfree/Asciiville/pics/marilyn.png"
+        style="width: 575px; height: 674px"
+        alt="marilyn"
+      />
+    </p>
+    <p>
+      <img
+        src="https://raw.githubusercontent.com/wiki/doctorfree/Asciiville/pics/ronandrachel.png"
+        style="width: 805px; height: 664px"
+        alt="ronandrachel"
+      />
+    </p>
+    <p>
+      <img
+        src="https://raw.githubusercontent.com/wiki/doctorfree/Asciiville/pics/computer-nude-artists.png"
+        style="width: 933px; height: 933px"
+        alt="nude"
+      />
+    </p>
+  </div>
+</details>
+<h2 id="asciiville-commands">Asciiville Commands</h2>
+See the
+<a href="https://asciiville.dev/documentation#commands">Commands section</a>
+for details on the Asciiville commands.
+<h2 id="quickstart">Quickstart</h2>
+See the
+<a href="https://asciiville.dev/install#quickstart">Quickstart section</a>
+for details on getting started quickly with Asciiville.
+<h2 id="requirements">Requirements</h2>
+<p>
+  Asciiville can be installed on Arch Linux, Debian based Linux systems, and RPM
+  based Linux systems using the platform native packaging format.
+</p>
+<p>
+  Apple macOS users can install Asciiville manually using the provided
+  installation script and <code>Darwin</code> distribution archive.
+</p>
+<p>
+  If no native packaging format is available, Linux users can install Asciiville
+  manually using the provided installation script and
+  <code>Linux</code> distribution archive.
+</p>
+<p>
+  Installation and initialization require administrative privilege. The
+  <code>ascinit</code> command, executed after installing Asciiville, installs
+  several packages and therefore requires access to the Internet along with
+  administrative privilege (e.g. <code>sudo</code>
+  privilege).
+</p>
+<p>
+  All of the following dependencies/requirements are automatically installed if
+  needed when using the Arch, Debian, or RPM format package install.
+</p>
+<ul>
+  <li>asciinema</li>
+  <li>cmatrix</li>
+  <li>figlet</li>
+  <li>gdu</li>
+  <li>gnupg</li>
+  <li>imagemagick</li>
+  <li>jq</li>
+  <li>mplayer</li>
+  <li>neofetch</li>
+  <li>python3</li>
+  <li>ranger</li>
+  <li>speedtest-cli</li>
+  <li>tmux</li>
+  <li>w3m</li>
+</ul>
+<p>
+  After installing Asciiville the <code>ascinit</code> command performs a
+  one-time initialization in which several additional packages are optionally
+  installed. This post-installation configuration can install any or all of
+  several terminal emulators along with character based tools. Terminal
+  emulators supported by Asciiville available during post-install configuration
+  are:
+</p>
+<ul>
+  <li>kitty (the default and always installed if not already present)</li>
+  <li>cool-retro-term (optionally installed if not present)</li>
+  <li>gnome-terminal (optionally installed if not present)</li>
+  <li>tilix (optionally installed if not present)</li>
+  <li>xfce4-terminal (optionally installed if not present)</li>
+</ul>
+<p>Tools installed during post-installation configuration include:</p>
+<ul>
+  <li>asciimatics</li>
+  <li>got</li>
+  <li>gum</li>
+  <li>vhs</li>
+  <li>jrnl</li>
+  <li>mutt</li>
+  <li>neomutt</li>
+  <li>neovim</li>
+  <li>pipx</li>
+  <li>rainbowstream</li>
+  <li>tdraw</li>
+</ul>
+<h2 id="installation">Installation</h2>
+See the <a href="https://asciiville.dev/install">Install section</a>
+for details on installing Asciiville.
+<h2 id="configuration">Configuration</h2>
+See the <a href="https://asciiville.dev/configuration">Configuration section</a>
+for details on configuring Asciiville and its components.
+<h2 id="documentation">Documentation</h2>
+See the <a href="https://asciiville.dev/documentation">Documentation section</a>
+for detailed documentation and usage of Asciiville and its components.
+<h2 id="adding-an-ascii-art-gallery">Adding an ASCII Art Gallery</h2>
+<p>
+  Additional info on adding and viewing ASCII art galleries in Asciiville can be
+  found in the
+  <a href="https://asciiville.dev/posts/Adding-Art-Galleries"
+    >Adding Art Galleries</a
+  >
+  article.
+</p>
+<p>
+  Asciiville includes several ASCII Art galleries produced by the renowned Ascii
+  Artist, Doctorwhen. These galleries can be viewed by opening
+  <code>asciiville</code> in interactive menu mode (execute
+  <code>asciiville</code> with no arguments or the <code>-i</code> argument).
+  From the main Asciiville menu select <em>Ascii Art</em> then select an Ascii
+  Art slideshow to view from the list of slideshows available in the Asciiville
+  Art menu.
+</p>
+<p>
+  Additional ASCII Art galleries can be added to the Asciiville Art menu by
+  creating and populating a directory in
+  <code>/usr/share/asciiville/art/</code> with ASCII Art files. The convention
+  in Asciiville is for ASCII Art filenames to end with the suffix
+  <code>.asc</code> so generate or locate ASCII Art files, make sure the
+  filenames end in <code>.asc</code>, and copy them to a new folder in
+  <code>/usr/share/asciiville/art/</code>. The new ASCII Art gallery will show
+  up in the menu listing the available ASCII Art slideshows the next time you
+  run <code>asciiville</code>.
+</p>
+<h3 id="generating-ascii-art">Generating ASCII Art</h3>
+<p>
+  Asciiville provides utilities and convenience menus for generating ASCII Art
+  from existing images. The pre-existing images can be in any image format. To
+  generate ASCII Art from a folder of images either use the
+  <code>show_ascii_art</code> command or the interactive menu interface in
+  <code>asciiville</code>:
+</p>
+<h4 id="using-show_ascii_art-to-generate-ascii-art">
+  Using <code>show_ascii_art</code> to generate ASCII Art
+</h4>
+<p>
+  The <code>show_ascii_art</code> command can be used to generate ASCII Art by
+  supplying it with an input folder of existing images and a desired output
+  folder to hold the generated ASCII Art files. To do so, invoke the command as
+  follows:
+</p>
+<p>
+  <code>show_ascii_art -I &lt;input folder&gt; -O &lt;output folder&gt;</code>
+</p>
+<p>
+  For example, the command
+  <code>show_ascii_art -I /u/pics/beach -O /u/pics/asciibeach</code> would
+  convert all of the image files in the <code>/u/pics/beach</code> folder into
+  ASCII Art files and store them in the <code>/u/pics/asciibeach</code> folder.
+</p>
+<p>
+  Note that the quality of generated ASCII Art is quite sensitive to the font in
+  use. The best quality can be achieved with a fixed width font and small font
+  size. You can think of the font as your paint brush and its size as the size
+  of the brush. Higher resolution ASCII Art is achieved with a finer brush. The
+  “palette” used to create ASCII Art is a string of characters. A default
+  palette is defined in Asciiville but alternate palettes can be selected with
+  command line switches.
+</p>
+<p>
+  If one of the terminal emulators that Asciiville is familiar with is used, the
+  font and font size are set for you in a terminal profile or by command line
+  arguments. The terminal emulators that Asciiville has integrated into its
+  generation and viewing facilities are <em>kitty</em>, <em>gnome-terminal</em>,
+  <em>tilix</em>, and <em>xfce4-terminal</em>. The currnt terminal window or
+  console screen can also be used but in that case the font and font size will
+  be whatever is already set.
+</p>
+<p>
+  If you use the current terminal window to generate/view ASCII Art then you may
+  wish to set the font to a fixed width font and size 10 or 12. On the other
+  hand, sometimes lower resolution ASCII Art is appealing. It’s up to you.
+</p>
+<h4 id="using-asciiville-menus-to-generate-ascii-art">
+  Using <code>asciiville</code> menus to generate ASCII Art
+</h4>
+<p>
+  When the <code>asciiville</code> command is invoked in interactive menu mode
+  the main menu contains an entry <em>Generate ASCII Art</em>. Selecting this
+  menu entry will prompt the user to select an image input directory. Answering
+  ‘y’ to the input directory prompt executed the Ranger file manager in
+  directory selection mode. Use the arrow keys to browse folders, press
+  <code>Enter</code> to enter a directory, and create a new directory with
+  <code>:mkdir &lt;dirname&gt;</code>. While in the directory you wish to
+  select, quit Ranger with ‘q’ and that directory will be selected as the image
+  input directory. Do the same to select an ascii output directory.
+</p>
+<p>
+  After selecting an image input directory and ascii art output directory the
+  user will then be prompted to confirm the directory selections and generate
+  ASCII Art. Answering ‘y’ at this prompt will generate ASCII Art files for each
+  of the images in the image input directory and store them in the ascii art
+  output directory.
+</p>
+<p>
+  After using either of these methods to generate ASCII Art, follow the guide
+  above to add the newly generated ASCII Art folder to the Asciiville ASCII Art
+  galleries.
+</p>
+<h3 id="adding-and-viewing-art-galleries">Adding and Viewing Art Galleries</h3>
+<p>
+  The Asciiville article
+  <a href="https://asciiville.dev/posts/Adding-Art-Galleries"
+    >Adding and Viewing Art Galleries</a
+  >
+  provides a brief tutorial introduction to generating a new ASCII Art gallery,
+  customizing, and viewing it.
+</p>
+<p>
+  Asciiville default galleries can be viewed using the interactive menus in the
+  <code>asciiville</code> command. Select the <em>Ascii Art</em> entry from the
+  main menu, select the options you prefer (e.g. preferred terminal emulator and
+  audio), and select the ascii art gallery you wish to view.
+</p>
+<p>
+  Note that the <code>cool-retro-term</code> terminal emulator will not, by
+  default, display the full height of the ascii art included in Asciiville as
+  the font size is too large. To view Asciiville Ascii Art slideshows using
+  <code>cool-retro-term</code>, first reduce the font scaling in the settings
+  menu to about 0.5. All the other terminal emulators supported by default in
+  Asciiville (<code>kitty</code>, <code>gnome-terminal</code>,
+  <code>tilix</code>, and <code>xfce4-terminal</code>) are dynamically
+  configured during slideshow presentations to scale font sizes so ascii art is
+  displayed correctly.
+</p>
+<p>
+  Asciiville ascii art viewing utilities including slideshow display utilize
+  intelligent and configurable font size changes to render ascii art in higher
+  quality. Each Asciiville ascii art gallery can be configured with options to
+  control some of these font size and display features. To configure a gallery,
+  add or edit the file
+  <code>/usr/share/asciiville/art/&lt;gallery&gt;/.config</code>. An example
+  Asciiville gallery configuration file can be found in
+  <code>/usr/share/asciiville/art/Vintage/.config</code>:
+</p>
+<pre><code>
+    scale_art_font=2
+    scale_txt_font=1
+    set_font_size=1
+    uses_ansi_escape=
+    show_filename=</code></pre>
+<p>
+  In this example, <code>scale_art_font=2</code> indicates double the font size
+  used for ascii art display; <code>scale_txt_font=1</code> indicates no change
+  to the text font size used for ascii art text display;
+  <code>set_font_size=1</code> indicates make font size changes;
+  <code>uses_ansi_escape=</code> indicates this gallery’s ascii art does not
+  utilize ANSI escape sequences to color its text; and
+  <code>show_filename=</code> indicates do not display the ascii art filename.
+</p>
+<p>The default settings for Asciiville ascii art galleries is:</p>
+<pre><code>
+    scale_art_font=1
+    scale_txt_font=1
+    set_font_size=1
+    uses_ansi_escape=1
+    show_filename=</code></pre>
+<p>
+  To display a gallery’s ascii art filename below the ascii art displayed, set
+  <code>show_filename=1</code> in the gallery’s <code>.config</code>. Any, none,
+  or all settings may be present in a gallery’s <code>.config</code>. If a
+  setting is not present, Asciiville uses the defaults described above.
+</p>
+<h3 id="ascii-art-tools">ASCII Art Tools</h3>
+<p>
+  The Asciiville article
+  <a href="https://asciiville.dev/posts/Tools-Ascii-Art/">ASCII Art Tools</a>
+  describes several tools not included in Asciiville that may be of use in
+  drawing and painting ASCII Art.
+</p>
+<h3 id="ascii-art-online">ASCII Art Online</h3>
+<p>
+  There are many online galleries of ASCII Art. In addition to the newly minted
+  extended ASCII Art galleries included in Asciiville, the Asciiville project
+  also includes a rich set of vintage ASCII Art in the <code>Vintage</code> art
+  gallery. The citizens of Asciiville have been diligent in their efforts to
+  comply with the artists’ licensing restrictions and only art that is freely
+  redistributable is contained in Asciiville. Many of the online ASCII Art
+  galleries available to the public are not as scrupulous with regards licensing
+  requirements. In their defense, it can be extremely difficult to discover the
+  origin and history of many of these works of art. Most were just culled from
+  other archives who culled them from downloads of archives of defunct online
+  bulletin boards and newsgroups and websites.
+</p>
+<p>
+  The point being, we here in Asciiville cannot guarantee anything about the
+  legal provinance of online ASCII Art galleries. We can only assure you that
+  the art included in Asciiville has been vetted and complies with all licensing
+  requirements. Note that much of the art included in Asciiville prohibits
+  redistribution for commercial purposes (e.g. the art in the
+  <code>Vintage</code> gallery). Others prohibit the use of hate speech in
+  conjunction with the display of the artist’s work. All of these requirements
+  must be satisfied by Asciiville users, both those of us here in Asciiville and
+  those who download and install our project.
+</p>
+<p>
+  That being said, exploring the online ASCII Art galleries is fun and much of
+  it can be legally downloaded, utilized however you want, and redistributed. To
+  get started exploring the world of online ASCII Art, visit the following:
+</p>
+<ul>
+  <li>
+    <a
+      href="https://web.archive.org/web/20091026203414/http://www.geocities.com/spunk1111/indexjava.htm" target="_blank" rel="noopener"
+      >Joan Stark’s incredible archived website</a
+    >
+  </li>
+  <li>
+    <a href="https://asciiart.website/" target="_blank" rel="noopener"
+      >Christopher Johnson’s ASCII Art Collection</a
+    >
+  </li>
+  <li><a href="https://www.ascii-fr.com/" target="_blank" rel="noopener">Dernières images d’art ascii</a></li>
+  <li>
+    <a href="https://www.mondocolorado.org/vault/typo.html" target="_blank" rel="noopener">Typo Gallery</a>
+  </li>
+  <li><a href="https://www.asciiart.eu/" target="_blank" rel="noopener">ASCII Art Archive</a></li>
+  <li><a href="https://textart.io/art" target="_blank" rel="noopener">Textart</a></li>
+  <li>
+    <a href="https://www.windows93.net" target="_blank" rel="noopener">Windows 93 on the Web</a>
+    <ul>
+      <li><a href="https://www.windows93.net/#!ascii" target="_blank" rel="noopener">ASCII Art</a></li>
+      <li><a href="https://www.windows93.net/#!ansi" target="_blank" rel="noopener">ANSI Art</a></li>
+    </ul>
+  </li>
+</ul>
+<h2 id="figlet-fonts">Figlet fonts</h2>
+<p>
+  Asciiville installs many new Figlet Fonts in addition to those installed by
+  the <code>pyfiglet</code> Python package. These fonts are used by the
+  <code>asciimatics</code> Python package. To view a complete list of the
+  installed <code>pyfiglet</code> fonts, run the command
+  <code>pyfiglet -l</code>. To see an example rendering of each of the installed
+  <code>pyfiglet</code> fonts including those installed by
+  <code>Asciiville</code>, run the command
+  <code>bash /usr/share/asciiville/tools/bin/show_figlet_fonts</code>. There are
+  many fonts so you may wish to redirect the output of the
+  <code>bash /usr/share/asciiville/tools/bin/show_figlet_fonts</code>
+  command for use with an editor or pager:
+</p>
+<pre><code>
+    bash /usr/share/asciiville/tools/bin/show_figlet_fonts &gt; figlet-fonts-examples.txt
+    less figlet-fonts-examples.txt</code></pre>
+<p>
+  For an example of how to use the Figlet Fonts in an asciimatics animation, see
+  <code>/usr/bin/asciiart</code>.
+</p>
+<h2 id="build">Build</h2>
+See the <a href="https://asciiville.dev/build">Build section</a>
+for details on building the Asciiville project and packaging.
+<h2 id="removal">Removal</h2>
+<p>
+  On Arch based Linux systems where the Asciiville package was installed using
+  the Asciiville Arch format package, remove the Asciiville package by executing
+  the command:
+</p>
+<pre class="console"><code> sudo pacman -Rs asciiville</code></pre>
+<p>
+  On Debian based Linux systems where the Asciiville package was installed using
+  the Asciiville Debian format package, remove the Asciiville package by
+  executing the command:
+</p>
+<pre class="console"><code> sudo apt remove asciiville</code></pre>
+<p>or</p>
+<pre class="console"><code> sudo dpkg -r asciiville</code></pre>
+<p>
+  On RPM based Linux systems where the Asciiville package was installed using
+  the Asciiville RPM format package, remove the Asciiville package by executing
+  the command:
+</p>
+<pre class="console"><code> sudo dnf remove Asciiville</code></pre>
+<p>or</p>
+<pre class="console"><code> sudo yum remove Asciiville</code></pre>
+<p>
+  The Asciiville package can be removed by executing the “Uninstall” script in
+  the Asciiville source directory:
+</p>
+<pre class="console"><code>
+    git clone https://github.com/doctorfree/Asciiville
+    cd Asciiville
+    ./Uninstall</code></pre>
+<p>
+  On systems for which the manual installation was performed using the
+  <code>Install-bin.sh</code> script, remove Asciiville manually by downloading
+  the <code>Uninstall-bin.sh</code> script and, as a user with sudo privilege,
+  execute the commands:
+</p>
+<pre>
+  <code>
+    chmod 755 Uninstall-bin.sh
+    sudo ./Uninstall-bin.sh
+  </code>
+</pre>
+<p>
+  Note that manual removal of Asciiville using the
+  <code>Uninstall-bin.sh</code> script will not remove any of the manually
+  installed dependencies. Manual installation and removal of Asciiville is not
+  as robust as packaged installation and removal. Hopefully additional platform
+  packaging will be available in the future. If you would like to assist with
+  this effort, see the <a href="#contributing">‘Contributing’ section</a> below.
+</p>
+<h2 id="what-is-ascii">What is ASCII</h2>
+<p>
+  ASCII is an abbreviation for “American Standard Code for Information
+  Interchange”, a character encoding standard for electronic communication.
+  ASCII codes represent text in computers, telecommunications equipment, and
+  other devices. Most modern character-encoding schemes are based on ASCII,
+  although they support many additional characters.
+</p>
+<p>
+  ASCII Code Chart<br />
+  <img
+    src="https://raw.githubusercontent.com/doctorfree/Asciiville/main/art/pics/USASCII_code_chart.png"
+    style="width: 1024px; height: 737px"
+    alt="asciicodes"
+  />
+</p>
+<p>
+  ASCII was developed from telegraph code. Its first commercial use was as a
+  seven-bit teleprinter code promoted by Bell data services. Originally based on
+  the English alphabet, ASCII encodes 128 specified characters into seven-bit
+  integers as shown by the ASCII chart above. The first edition of the standard
+  was published in 1963.
+</p>
+<p>
+  Extended ASCII (EASCII or high ASCII) character encodings are eight-bit or
+  larger encodings that include the standard seven-bit ASCII characters, plus
+  additional characters. There are many extended ASCII encodings.
+</p>
+<p>
+  The phrase “ANSI character set” has no well-defined meaning and in the context
+  of ANSI Art typically refers to “Code page 437”, the character set of the
+  original IBM PC. In Asciiville the phrase “ANSI Art” refers to ASCII Art that
+  utilizes the extended ASCII character encoding with the ability to render
+  colored text. The phrase “ASCII Art” encompasses all such character
+  renderings, ASCII and extended ASCII. Whether it’s “Art” is left as an
+  exercise for the viewer.
+</p>
+<h3 id="ascii-art-history">ASCII Art History</h3>
+<p>
+  The Asciiville article
+  <a href="https://asciiville.dev/posts/Ascii-Art-History">ASCII Art History</a>
+  provides us with a brief history of the development of text based art over the
+  millenia, concrete poetry to typewriter art to ASCII and ANSI art.
+</p>
+<p>
+  Typewriter art by Flora F.F. Stacey from 1898<br />
+  <img
+    src="https://raw.githubusercontent.com/doctorfree/Asciiville/main/art/pics/typewriter-art.jpg"
+    style="width: 600px; height: 800px"
+    alt="typewriter"
+  />
+</p>
+<h2 id="videos">Videos</h2>
+See the <a href="https://asciiville.dev/videos">Videos section</a>
+for several entertaining and informative Asciiville videos.
+<h2 id="screenshots">Screenshots</h2>
+<div align="center">
+  <p>
+    Waterfall as Ascii Art generated and rendered with Asciiville<br />
+    <img
+      src="https://raw.githubusercontent.com/doctorfree/Asciiville/main/screenshots/Asciiville-Waterfall.png"
+      style="width: 1280px; height: 720px"
+      alt="waterfall"
+    />
+  </p>
+  <p>
+    Asciiville Main Menu<br />
+    <img
+      src="https://raw.githubusercontent.com/doctorfree/Asciiville/main/screenshots/Asciiville-Welcome.png"
+      style="width: 800px; height: 600px"
+      alt="welcome"
+    />
+    <img
+      src="https://raw.githubusercontent.com/doctorfree/Asciiville/main/screenshots/Asciiville-MainMenu.png"
+      style="width: 800px; height: 600px"
+      alt="mainmenu"
+    />
+  </p>
+  <p>
+    Asciiville Sub-Menus: Ascii Art, Asciimatics Animations, MusicPlayerPlus,
+    and RoonCommandLine<br />
+    <img
+      src="https://raw.githubusercontent.com/doctorfree/Asciiville/main/screenshots/Asciiville-Art.png"
+      style="width: 800px; height: 600px"
+      alt="art"
+    />
+    <img
+      src="https://raw.githubusercontent.com/doctorfree/Asciiville/main/screenshots/Asciiville-Animation.png"
+      style="width: 800px; height: 600px"
+      alt="animation"
+    />
+    <img
+      src="https://raw.githubusercontent.com/doctorfree/Asciiville/main/screenshots/Asciiville-Music.png"
+      style="width: 800px; height: 600px"
+      alt="music"
+    />
+    <img
+      src="https://raw.githubusercontent.com/doctorfree/Asciiville/main/screenshots/Asciiville-Roon.png"
+      style="width: 800px; height: 600px"
+      alt="roon"
+    />
+  </p>
+  <p>
+    Ascii System Monitor, Maps, and Weather<br />
+    <img
+      src="https://raw.githubusercontent.com/doctorfree/Asciiville/main/screenshots/Btop.png"
+      style="width: 800px; height: 600px"
+      alt="btop"
+    />
+    <img
+      src="https://raw.githubusercontent.com/doctorfree/Asciiville/main/screenshots/Mapscii-Ukraine.png"
+      style="width: 800px; height: 600px"
+      alt="ukraine"
+    />
+    <img
+      src="https://raw.githubusercontent.com/doctorfree/Asciiville/main/screenshots/Weather.png"
+      style="width: 800px; height: 600px"
+      alt="weather"
+    />
+  </p>
+</div>
+<h2 id="contributing">Contributing</h2>
+<p>
+  There are a variety of ways to contribute to the Asciiville project. All forms
+  of contribution are appreciated and valuable. Also, it’s fun to collaborate.
+  Here are a few ways to contribute to the further improvement and evolution of
+  Ascii Art, Animation, and Utilities:
+</p>
+<h3 id="testing-and-issue-reporting">Testing and Issue Reporting</h3>
+<p>
+  Asciiville is fairly complex with many components, features, options,
+  configurations, and use cases. Although currently only supported on Linux
+  platforms, there are a plethora of Linux platforms on which Asciiville can be
+  deployed. Testing all of the above is time consuming and tedious. If you have
+  a Linux platform on which you can install Asciiville and you have the time and
+  will to put it through its paces, then issue reports on problems you encounter
+  would greatly help improve the robustness and quality of Asciiville. Open
+  issue reports at
+  <a href="https://github.com/doctorfree/Asciiville/issues" target="_blank" rel="noopener"
+    >https://github.com/doctorfree/Asciiville/issues</a
+  >
+</p>
+<h3 id="sponsor-asciiville">Sponsor Asciiville</h3>
+<p>
+  Asciiville is completely free and open source software. All of the Asciiville
+  components are freely licensed and may be copied, modified, and redistributed
+  freely. Nobody gets paid, nobody is making any money, it’s a project fully
+  motivated by curiousity and love of art. However, it does take some money to
+  procure development and testing resources. Right now Asciiville needs a
+  multi-boot test platform to extend support to a wider variety of Linux
+  platforms and potentially Mac OS X.
+</p>
+<p>
+  If you have the means and you would like to sponsor Asciiville development,
+  testing, platform support, and continued improvement then your monetary
+  support could play a very critical role. A little bit goes a long way in
+  Asciiville. For example, a bootable USB SSD device could serve as a means of
+  porting and testing support for additional platforms. Or, a decent cup of
+  coffee could be the difference between a bug filled release and a glorious
+  artistic adventure.
+</p>
+<p>
+  Sponsor the Asciiville project at
+  <a href="https://github.com/sponsors/doctorfree"
+    >https://github.com/sponsors/doctorfree</a
+  >
+</p>
+<h3 id="contribute-to-development">Contribute to Development</h3>
+<p>
+  If you have programming skills and find Ascii text based art, animation, and
+  utilities to be an interesting area, you can contribute to Asciiville
+  development through the standard Github “fork, clone, pull request” process.
+  There are many guides to contributing to Github hosted open source projects on
+  the Internet. A good one is available at
+  <a href="https://www.dataschool.io/how-to-contribute-on-github/" target="_blank" rel="noopener"
+    >https://www.dataschool.io/how-to-contribute-on-github/</a
+  >. Another short succinct guide is at
+  <a href="https://gist.github.com/MarcDiethelm/7303312" target="_blank" rel="noopener"
+    >https://gist.github.com/MarcDiethelm/7303312</a
+  >.
+</p>
+<p>
+  Once you have forked and cloned the Asciiville repository, it’s time to setup
+  a development environment. Although many of Asciiville’s commands are Bash
+  shell scripts, there are also text based applicatons and games written in C
+  and C++ along with documentation in Markdown format, configuration files in a
+  variety of formats, examples, screenshots, video demos, build scripts,
+  packaging, and more.
+</p>
+<p>
+  The development environment consists of several packages needed to build,
+  package, and test Asciiville components. These include:
+</p>
+<p>
+  coreutils, sed, git, build-essential, gcc, g++, make, uuid-dev,
+  libboost-graph-dev, cmake, python3, jdk, flex, bison, libncurses5-dev,
+  autotools-dev, libjpeg-dev, libpng-dev, libcurl4-gnutls-dev, libncurses5-dev,
+  autoconf-archive, pkg-config
+</p>
+<p>
+  On Arch, Debian, and RPM based systems the Asciiville installation package can
+  be created with the <code>mkpkg</code> script. This script invokes the
+  <code>build</code> script for each of the projects included with Asciiville,
+  populates a distribution tree, and calls the respective packaging utilities.
+  Packages are saved in the <code>./releases/&lt;version&gt;/</code> folder.
+  Once a package has been created it can be installed with the
+  <code>Install</code> script.
+</p>
+<p>
+  It’s not necessary to have C/C++ expertise to contribute to Asciiville
+  development. Many of the Asciiville commands are Bash scripts and require no
+  compilaton. Script commands reside in the <code>bin</code> directory. To
+  modify a shell script, install Asciiville and edit the
+  <code>bin/&lt;script&gt;</code> you wish to improve. Simply copy the revised
+  script to <code>/usr/bin</code> and test your changes. Modifying the
+  configuration files is a little more tricky. Configuration files generally
+  live in the <code>conf</code> directory but each has its own installation
+  location and some are modified by the <code>ascinit</code> command during
+  installation. If you are just modifying the shell scripts or configuration
+  files then you don’t need to worry about the extensive list of dependencies
+  listed above.
+</p>
+<p>Feel free to email me at github@ronrecord.com with questions or comments.</p>
+<div align="center">
+  <h2 id="connect">Connect</h2>
+  <a href="https://ronrecord.com" target="_blank" rel="noopener">
+    <img
+      style="height: 40px"
+      alt="domain"
+      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/domain.png"
+  /></a>
+  <a
+    href="https://www.reddit.com/user/No-Blackberry-3160"
+    target="_blank"
+    rel="noopener"
+  >
+    <img
+      style="height: 40px"
+      alt="reddit"
+      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/reddit.png"
+  /></a>
+  <a href="https://github.com/doctorfree" target="_blank" rel="noopener">
+    <img
+      style="height: 40px"
+      alt="github"
+      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/github.png"
+  /></a>
+  <a href="https://gitlab.com/doctorfree" target="_blank" rel="noopener">
+    <img
+      style="height: 40px"
+      alt="gitlab"
+      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/gitlab.png"
+  /></a>
+  <a href="https://twitter.com/ronrecord" target="_blank" rel="noopener">
+    <img
+      style="height: 40px"
+      alt="twitter"
+      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/twitter.png"
+  /></a>
+  <a href="https://youtube.com/c/doctorfree" target="_blank" rel="noopener">
+    <img
+      style="height: 40px"
+      alt="youtube"
+      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/youtube.png"
+  /></a>
+  <a href="https://linkedin.com/in/ronrecord" target="_blank" rel="noopener">
+    <img
+      style="height: 40px"
+      alt="linkedin"
+      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/linkedin.png"
+  /></a>
+  <a href="https://instagram.com/doctorfree" target="_blank" rel="noopener">
+    <img
+      style="height: 40px"
+      alt="instagram"
+      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/instagram.png"
+  /></a>
+  <a href="https://noc.social/@doctorwhen" target="_blank" rel="me">
+    <img
+      style="height: 40px"
+      alt="mastodon"
+      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/mastodon.png"
+  /></a>
+  <a
+    href="https://en.wikipedia.org/wiki/User:Doctorfree"
+    target="_blank"
+    rel="noopener"
+  >
+    <img
+      style="height: 40px"
+      alt="wikipedia"
+      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/wikipedia.png"
+  /></a>
+</div>
