@@ -1,10 +1,10 @@
 ---
 title: "Publishing pages"
+layout: post
+post_style: page
 tagName: publishing
 search: exclude
 permalink: tag_publishing.html
-sidebar: mydoc_sidebar
-folder: tags
 ---
 {% include taglogic.html %}
 

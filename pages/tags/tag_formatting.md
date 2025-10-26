@@ -1,10 +1,10 @@
 ---
 title: "Formatting pages"
+layout: post
+post_style: page
 tagName: formatting
 search: exclude
 permalink: tag_formatting.html
-sidebar: mydoc_sidebar
-folder: tags
 ---
 {% include taglogic.html %}
 

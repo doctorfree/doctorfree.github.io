@@ -1,10 +1,10 @@
 ---
 title: "Getting started pages"
+layout: post
+post_style: page
 tagName: getting_started
 search: exclude
 permalink: tag_getting_started.html
-sidebar: mydoc_sidebar
-folder: tags
 ---
 {% include taglogic.html %}
 

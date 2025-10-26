@@ -1,10 +1,10 @@
 ---
 title: "Mobile Pages"
+layout: post
+post_style: page
 search: exclude
 tagName: mobile
 permalink: tag_mobile.html
-sidebar: mydoc_sidebar
-folder: tags
 ---
 {% include taglogic.html %}
 

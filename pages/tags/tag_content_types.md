@@ -1,10 +1,10 @@
 ---
 title: "Content types pages"
+layout: post
+post_style: page
 tagName: content_types
 search: exclude
 permalink: tag_content_types.html
-sidebar: mydoc_sidebar
-folder: tags
 ---
 {% include taglogic.html %}
 

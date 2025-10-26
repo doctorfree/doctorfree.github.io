@@ -2,6 +2,7 @@
 title: AVsitterPlus
 layout: post
 post_style: page
+summary:
 tags: AVsitterPlus
 toc: true
 permalink: avsitterplus_home.html

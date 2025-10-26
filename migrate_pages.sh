@@ -1,0 +1,31 @@
+#!/bin/bash
+
+HERE=$(pwd)
+for pdir in avsitterplus home tags
+do
+  if [ -d pages/${pdir} ]; then
+    cd pages/${pdir}
+    for i in *
+    do
+      [ "$i" == "*" ] && {
+        echo "No pages in pages/${pdir}"
+        continue
+      }
+      grep -v ^sidebar: $i | grep -v ^folder: > /tmp/i$$
+      cp /tmp/i$$ $i
+      rm -f /tmp/i$$
+
+      cat $i | sed -e "s/^keywords/tags/" > /tmp/i$$
+      cp /tmp/i$$ $i
+      rm -f /tmp/i$$
+
+      sed -i "/^title:/a\
+post_style: page" $i
+      sed -i "/^title:/a\
+layout: post" $i
+    done
+    cd "${HERE}"
+  else
+    echo "pages/${pdir} not found"
+  fi
+done
