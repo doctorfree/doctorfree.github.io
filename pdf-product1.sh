@@ -1,0 +1,24 @@
+#!/bin/bash
+
+have_prince=$(type -p prince)
+[ "${have_prince}" ] || {
+  echo "ERROR: could not locate prince. Exiting."
+  exit 1
+}
+have_jekyll=$(type -p jekyll)
+[ "${have_jekyll}" ] || {
+  echo "ERROR: could not locate jekyll. Exiting."
+  exit 1
+}
+
+echo 'Killing all Jekyll instances'
+kill -9 $(ps aux | grep '[j]ekyll' | awk '{print $2}')
+clear
+
+echo "Building PDF-friendly HTML site for Product1 ...";
+jekyll serve --detach --config _config.yml,pdfconfigs/config_product1_pdf.yml;
+echo "done";
+
+echo "Building the PDF ...";
+prince --javascript --input-list=_site/pdfconfigs/prince-list.txt -o pdf/product1.pdf;
+echo "done";

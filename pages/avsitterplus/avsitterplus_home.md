@@ -1,15 +1,12 @@
 ---
-title:
-layout: post
-post_style: page
-icon: fas fa-info-circle
+title: AVsitterPlus
+summary:
+keywords: AVsitterPlus
+sidebar: avsitterplus_sidebar
 toc: true
-order: 9
+permalink: avsitterplus_home.html
+folder: avsitterplus
 ---
-
-<div align="center">
-  <img src="/assets/AVsitterPlus.png" alt="AVsitterPlus">
-</div>
 
 ## What is AVsitterPlus
 

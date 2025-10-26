@@ -1,0 +1,93 @@
+---
+title: AVP_faces&trade;
+keywords: plugin, faces
+sidebar: avsitterplus_sidebar
+permalink: avsitterplus_faces.html
+folder: avsitterplus
+---
+
+## AVP_faces&trade;
+
+The AVP_faces script allows creators to add facial expressions to AVsitterPlus&trade; furniture.
+
+{% include important.html content="Facial expressions can be switched off via the [FACES] button in the [ADJUST] menu." %}
+
+### Adding Facial Expressions
+To add facial expressions to your furniture, start with the [normal setup](/avsitterplus_home.html#setup) procedure, then:
+
+1. Ensure the AVP_helper and AVP_adjuster are in the prim.
+2. Drop the AVP_faces script into the prim.
+3. Sit on the furniture, then choose a pose from the menu that will trigger the facial expression.
+4. Choose [ADJUST] then [HELPER] from the menu, and the AVP_helper stick will rez.
+5. Choose [NEW] from the menu, then choose [FACE] and select an expression from the list.
+6. You should see the facial expression playing on your avatar.
+7. Repeat for each pose you want to give a facial expression.
+8. When you have finished adding all your facial expressions, click [DUMP] to output your settings into chat.
+9. Copy-paste the [DUMP] result into your AVP_Positions notecard, replacing the contents of the notecard.
+
+{% include note.html content="Facial Expressions are defined separately for each SITTER." %}
+
+### Notecard Commands
+Facial expressions added via the [NEW] menu will simply repeat the expression every 1 second. You can edit the notecard to add facial expressions manually or change how they behave.
+
+The format for the notecard is:
+
+    ANIM <trigger_name>|<expression>|<duration>|<expression>|<duration>|<expression>|<duration> ...
+
+&lt;trigger_name&gt; must match the menu name of the pose that you want to trigger the facial expression sequence.
+
+&lt;expression&gt;&#124;&lt;duration&gt; is a facial expression followed by the number of seconds to play it.
+
+For example in the following notecard line:
+
+    ANIM Anim1|express_smile|1
+
+When the "Anim1" pose is selected from the menu the script will play the expression "express_smile" every 1 second.
+
+Another example:
+
+    ANIM Happy|express_laugh_emote|5|express_smile|1|express_wink_emote|2
+
+When the "Happy" pose is selected from the menu the script will play the expression "express_laugh_emote". Then after 5 seconds play "express_smile", then "express_wink_emote", then loop to the start after 2 seconds.
+
+Another example:
+
+    ANIM Sleep|express_smile|1|express_disdain|1
+
+When the "Sleep" pose is selected, this alternates between "express_smile" and "express_disdain" every second. SL does not offer a facial expression for sleeping but combining these animations gives a close approximation.
+
+Usually a sequence will loop, but if a dash ( - ) is entered instead of a duration then the sequence will stop after playing. e.g.
+
+    ANIM Happy|express_laugh_emote|5|express_smile|-
+
+If you want to continually re-apply an expression every second, then begin it's duration with a dash ( - ). e.g:
+
+    ANIM Happy|express_laugh_emote|-5|express_smile|-3
+
+You can use 'none' for the name of an animation file if you need to create a pause. e.g.
+
+    ANIM Happy|express_laugh_emote|-5|none|5
+
+The facial expressions available in SL include:
+
+    express_afraid_emote, express_anger_emote, express_laugh_emote, express_bored_emote, express_cry_emote, express_embarrassed_emote, express_sad_emote, express_toothsmile, express_smile, express_surprise_emote, express_worry_emote, express_repulsed_emote, express_shrug_emote, express_wink_emote, express_disdain, express_frown, express_kiss, express_open_mouth, express_tongue_out
+
+In addition to SL facial expressions, you can also use any (non looped) animation that is in the furniture. e.g:
+
+    ANIM Cheer|ArmsUp|-
+
+If you want to re-use an ANIM line that is already defined for the same sitter, then simply refer to that line instead of creating a new sequence. e.g.:
+
+    ANIM pose1|express_laugh_emote|5|express_smile|1
+    ...
+    ANIM pose2|pose1
+
+{% include note.html content="The full list of internal SL animations can be found [here](http://wiki.secondlife.com/wiki/Internal_Animations), and examples of the facial expressions [here](http://wiki.secondlife.com/wiki/File:SL_face_expressions.jpg)." %}
+
+{% include important.html content="We suggest a sensible maximum of 3 expressions per ANIM line, to conserve script memory and reduce clutter. Also, scripts can only read the first 255 characters (bytes) per notecard line." %}
+
+{% include tip.html content="For examples that use AVP_faces&trade;, see the Plugins Examples [BOX]." %}
+
+{% include important.html content="<a href='https://community.secondlife.com/t5/Featured-News/Introducing-Project-Bento-New-Bones-Added-to-Second-Life-Avatar/ba-p/2987206'>Project Bento</a> is now a reality in Second Life. It changes nothing about this script. For Bento mesh heads to work with this script, they should have a piece of scripting that reacts to a facial expression by launching its own Bento associated animation." %}
+
+{% include links.html %}
