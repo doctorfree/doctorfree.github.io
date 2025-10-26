@@ -1,8 +1,9 @@
 ---
 title: The AVP_Positions Notecard
-layout: post
-post_style: page
+date: 2025-10-21 12:00:00 +0800
+layout: page
 tags: AVsitterPlus
+toc: true
 permalink: avsitterplus_avp_positions.html
 ---
 

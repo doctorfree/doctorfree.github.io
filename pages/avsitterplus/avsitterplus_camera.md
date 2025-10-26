@@ -1,8 +1,9 @@
 ---
 title: AVP_camera
-layout: post
-post_style: page
+date: 2025-10-21 12:00:01 +0800
+layout: page
 tags: camera
+toc: true
 permalink: avsitterplus_camera.html
 ---
 

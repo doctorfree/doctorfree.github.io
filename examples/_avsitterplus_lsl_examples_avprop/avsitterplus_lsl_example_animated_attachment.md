@@ -1,5 +1,6 @@
 ---
 title:  "Animated Attachment"
+layout: page
 permalink: avsitterplus_lsl_example_animated_attachment.html
 ---
 

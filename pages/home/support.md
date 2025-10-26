@@ -1,7 +1,7 @@
 ---
 title: AVsitterPlus Support
-layout: post
-post_style: page
+date: 2025-10-21 12:00:20 +0800
+layout: page
 tags: support
 permalink: support.html
 toc: false

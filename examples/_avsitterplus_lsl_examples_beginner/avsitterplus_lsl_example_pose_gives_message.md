@@ -1,5 +1,6 @@
 ---
 title:  "Pose Gives Chat Message"
+layout: page
 permalink: avsitterplus_lsl_example_pose_gives_message.html
 ---
 

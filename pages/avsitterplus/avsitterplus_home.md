@@ -1,7 +1,7 @@
 ---
 title: AVsitterPlus
-layout: post
-post_style: page
+date: 2025-10-21 12:00:05 +0800
+layout: page
 summary:
 tags: AVsitterPlus
 toc: true

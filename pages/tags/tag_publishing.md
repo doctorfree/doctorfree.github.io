@@ -1,7 +1,7 @@
 ---
 title: "Publishing pages"
-layout: post
-post_style: page
+date: 2025-10-21 12:00:29 +0800
+layout: page
 tagName: publishing
 search: exclude
 permalink: tag_publishing.html

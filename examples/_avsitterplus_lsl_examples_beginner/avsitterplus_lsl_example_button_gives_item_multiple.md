@@ -1,5 +1,6 @@
 ---
 title:  "Button Gives Multiple Items"
+layout: page
 permalink: avsitterplus_lsl_example_button_gives_item_multiple.html
 ---
 

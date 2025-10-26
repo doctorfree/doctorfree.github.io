@@ -7,6 +7,5 @@ SCRIPT_PATH="$(
 have_real=$(type -p realpath)
 [ "${have_real}" ] && SCRIPT_PATH="$(realpath $SCRIPT_PATH)"
 
-${SCRIPT_PATH}/pdf-mydoc
 ${SCRIPT_PATH}/pdf-product1
 ${SCRIPT_PATH}/pdf-product2

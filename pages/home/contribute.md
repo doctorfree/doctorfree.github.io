@@ -1,7 +1,7 @@
 ---
 title: Contributor Guidelines
-layout: post
-post_style: page
+date: 2025-10-21 12:00:18 +0800
+layout: page
 summary: The AVsitterPlus Project is open-source and welcomes help from the community.
 tags: mydoc
 toc: false

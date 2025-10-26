@@ -1,0 +1,35 @@
+#!/bin/bash
+
+SCRIPT_PATH="$(
+  cd "$(dirname "$0")"
+  pwd -P
+)"
+have_real=$(type -p realpath)
+[ "${have_real}" ] && SCRIPT_PATH="$(realpath $SCRIPT_PATH)"
+TOP=$(dirname "${SCRIPT_PATH}")
+
+cd "${TOP}"
+
+for pdir in avsitterplus home tags
+do
+  if [ -d pages/${pdir} ]; then
+    cd pages/${pdir}
+    for i in *
+    do
+      [ "$i" == "*" ] && {
+        echo "No pages in pages/${pdir}"
+        continue
+      }
+      grep -v ^post_style: $i > /tmp/i$$
+      cp /tmp/i$$ $i
+      rm -f /tmp/i$$
+
+      cat $i | sed -e "s/^layout:.*/layout: page/" > /tmp/i$$
+      cp /tmp/i$$ $i
+      rm -f /tmp/i$$
+    done
+    cd "${TOP}"
+  else
+    echo "pages/${pdir} not found"
+  fi
+done

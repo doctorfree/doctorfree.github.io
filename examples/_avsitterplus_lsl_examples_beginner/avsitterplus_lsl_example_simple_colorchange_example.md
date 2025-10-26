@@ -1,5 +1,6 @@
 ---
 title:  "Simple Colorchange Example"
+layout: page
 permalink: avsitterplus_lsl_example_simple_colorchange_example.html
 ---
 

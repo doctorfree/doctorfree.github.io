@@ -1,5 +1,6 @@
 ---
 title:  "Re-Rez Detached Prop"
+layout: page
 permalink: avsitterplus_lsl_example_rez_detached_prop.html
 ---
 

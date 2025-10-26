@@ -1,5 +1,6 @@
 ---
 title:  "Button Gives Single Item"
+layout: page
 permalink: avsitterplus_lsl_example_button_gives_item_single.html
 ---
 

@@ -1,5 +1,6 @@
 ---
 title:  "Button Gives Folder"
+layout: page
 permalink: avsitterplus_lsl_example_button_gives_folder.html
 ---
 

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+sudo apt update
+sudo apt install python3-pip python3-cffi python3-brotli libpango-1.0-0 \
+    libharfbuzz0b libpangoft2-1.0-0 libffi-dev libjpeg-dev libopenjp2-7-dev
+
+[ -f ${HOME}/.venv/bin/activate ] && source ${HOME}/.venv/bin/activate
+python3 -m pip install weasyprint

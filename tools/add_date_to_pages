@@ -1,0 +1,49 @@
+#!/bin/bash
+
+SCRIPT_PATH="$(
+  cd "$(dirname "$0")"
+  pwd -P
+)"
+have_real=$(type -p realpath)
+[ "${have_real}" ] && SCRIPT_PATH="$(realpath $SCRIPT_PATH)"
+TOP=$(dirname "${SCRIPT_PATH}")
+
+cd "${TOP}"
+
+minute=0
+second=0
+date="2025-10-21 12:0${minute}:0${second} +0800"
+for pdir in avsitterplus home tags
+do
+  if [ -d pages/${pdir} ]; then
+    cd pages/${pdir}
+    for i in *
+    do
+      [ "$i" == "*" ] && {
+        echo "No pages in pages/${pdir}"
+        continue
+      }
+
+      grep ^date: $i >/dev/null && continue
+      sed -i "/^title:/a\
+date: ${date}" $i
+      ((second++))
+      [ ${second} -ge 60  ] && {
+        ((minute++))
+        [ ${minute} -gt 9  ] && {
+          echo "Too many pages, only 600 pages can be processed. Exiting."
+          exit 1
+        }
+        second=0
+      }
+      if [ ${second} -le 9  ]; then
+        date="2025-10-21 12:0${minute}:0${second} +0800"
+      else
+        date="2025-10-21 12:0${minute}:${second} +0800"
+      fi
+    done
+    cd "${TOP}"
+  else
+    echo "pages/${pdir} not found"
+  fi
+done

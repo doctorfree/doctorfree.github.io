@@ -1,5 +1,6 @@
 ---
 title:  "Move a Prim by Pose"
+layout: page
 permalink: avsitterplus_lsl_example_move_prim.html
 ---
 

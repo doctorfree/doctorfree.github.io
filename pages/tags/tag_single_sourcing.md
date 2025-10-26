@@ -1,7 +1,7 @@
 ---
 title: "Single sourcing pages"
-layout: post
-post_style: page
+date: 2025-10-21 12:00:31 +0800
+layout: page
 tagName: single_sourcing
 search: exclude
 permalink: tag_single_sourcing.html

@@ -1,0 +1,54 @@
+#!/bin/bash
+
+SCRIPT_PATH="$(
+  cd "$(dirname "$0")"
+  pwd -P
+)"
+have_real=$(type -p realpath)
+[ "${have_real}" ] && SCRIPT_PATH="$(realpath $SCRIPT_PATH)"
+TOP=$(dirname "${SCRIPT_PATH}")
+
+cd "${TOP}"
+
+for pdir in examples/*
+do
+  [ "${pdir}" == "examples/*" ] && {
+    echo "ERROR: no subirectories found in ${TOP}/examples. Exiting."
+  }
+  if [ -d ${pdir} ]; then
+    cd ${pdir}
+    for i in *
+    do
+      [ "$i" == "*" ] && {
+        echo "No pages in ${pdir}"
+        continue
+      }
+      grep -v ^sidebar: $i | grep -v ^folder: > /tmp/i$$
+      cp /tmp/i$$ $i
+      rm -f /tmp/i$$
+
+      cat $i | sed -e "s/^keywords/tags/" > /tmp/i$$
+      cp /tmp/i$$ $i
+      rm -f /tmp/i$$
+
+      sed -i "/^title:/a\
+layout: page" $i
+    done
+    cd "${TOP}"
+  else
+    if [ -f ${pdir} ]; then
+      grep -v ^sidebar: ${pdir} | grep -v ^folder: > /tmp/i$$
+      cp /tmp/i$$ ${pdir}
+      rm -f /tmp/i$$
+
+      cat ${pdir} | sed -e "s/^keywords/tags/" > /tmp/i$$
+      cp /tmp/i$$ ${pdir}
+      rm -f /tmp/i$$
+
+      sed -i "/^title:/a\
+layout: page" ${pdir}
+    else
+      echo "${pdir} not found"
+    fi
+  fi
+done

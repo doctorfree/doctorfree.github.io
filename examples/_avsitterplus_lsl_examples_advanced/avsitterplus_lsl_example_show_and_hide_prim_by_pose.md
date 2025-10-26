@@ -1,5 +1,6 @@
 ---
 title:  "Show/Hide Prim by Pose"
+layout: page
 permalink: avsitterplus_lsl_example_show_and_hide_prim_by_pose.html
 ---
 

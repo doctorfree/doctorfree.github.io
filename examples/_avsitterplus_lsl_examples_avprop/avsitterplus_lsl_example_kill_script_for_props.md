@@ -1,5 +1,6 @@
 ---
 title:  "Prop Kill Script"
+layout: page
 permalink: avsitterplus_lsl_example_kill_script_for_props.html
 ---
 

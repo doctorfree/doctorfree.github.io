@@ -1,5 +1,6 @@
 ---
 title:  "Shared Props by Pose"
+layout: page
 permalink: avsitterplus_lsl_example_shared_props_by_pose.html
 ---
 

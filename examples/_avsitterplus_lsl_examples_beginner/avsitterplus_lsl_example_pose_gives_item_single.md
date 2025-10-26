@@ -1,5 +1,6 @@
 ---
 title:  "Pose Gives Single Item"
+layout: page
 permalink: avsitterplus_lsl_example_pose_gives_item_single.html
 ---
 

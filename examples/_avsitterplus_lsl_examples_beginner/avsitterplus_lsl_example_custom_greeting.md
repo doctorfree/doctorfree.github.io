@@ -1,5 +1,6 @@
 ---
 title:  "Custom Greeting"
+layout: page
 permalink: avsitterplus_lsl_example_custom_greeting.html
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: In-world Updates
-layout: post
-post_style: page
+date: 2025-10-21 12:00:21 +0800
+layout: page
 tags: updates, release notes
 permalink: updates.html
 toc: false

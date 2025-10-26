@@ -1,7 +1,7 @@
 ---
 title: "Troubleshooting pages"
-layout: post
-post_style: page
+date: 2025-10-21 12:00:33 +0800
+layout: page
 tagName: troubleshooting
 search: exclude
 permalink: tag_troubleshooting.html

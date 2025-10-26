@@ -1,7 +1,7 @@
 ---
 title: "Formatting pages"
-layout: post
-post_style: page
+date: 2025-10-21 12:00:24 +0800
+layout: page
 tagName: formatting
 search: exclude
 permalink: tag_formatting.html

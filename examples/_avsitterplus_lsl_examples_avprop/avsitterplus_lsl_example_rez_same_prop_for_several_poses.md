@@ -1,5 +1,6 @@
 ---
 title:  "Rez Same Prop for Several Poses"
+layout: page
 permalink: avsitterplus_lsl_example_rez_same_prop_for_several_poses.html
 ---
 

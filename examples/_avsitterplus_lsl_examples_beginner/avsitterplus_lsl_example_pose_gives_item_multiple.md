@@ -1,5 +1,6 @@
 ---
 title:  "Pose Gives Multiple Items"
+layout: page
 permalink: avsitterplus_lsl_example_pose_gives_item_multiple.html
 ---
 

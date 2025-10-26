@@ -1,5 +1,6 @@
 ---
 title:  "Looped Sound by Button"
+layout: page
 permalink: avsitterplus_lsl_example_looped_sound_by_button.html
 ---
 

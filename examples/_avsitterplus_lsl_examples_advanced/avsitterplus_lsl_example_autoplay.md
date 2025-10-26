@@ -1,5 +1,6 @@
 ---
 title:  "Autoplay"
+layout: page
 permalink: avsitterplus_lsl_example_autoplay.html
 ---
 

@@ -1,5 +1,6 @@
 ---
 title:  "Shared Props by Button"
+layout: page
 permalink: avsitterplus_lsl_example_shared_props_by_button.html
 ---
 

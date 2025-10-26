@@ -1,5 +1,6 @@
 ---
 title:  "Pose Gives Folder of Items"
+layout: page
 permalink: avsitterplus_lsl_example_pose_gives_folder.html
 ---
 

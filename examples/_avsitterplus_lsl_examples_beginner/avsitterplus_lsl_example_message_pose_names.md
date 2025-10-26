@@ -1,5 +1,6 @@
 ---
 title:  "Message Pose Names"
+layout: page
 permalink: avsitterplus_lsl_example_message_pose_names.html
 ---
 

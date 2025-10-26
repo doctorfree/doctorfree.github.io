@@ -10,9 +10,11 @@ TOP=$(dirname "${SCRIPT_PATH}")
 
 cd "${TOP}"
 
+[ -f ${HOME}/.venv/bin/activate ] && source ${HOME}/.venv/bin/activate
 have_prince=$(type -p prince)
-[ "${have_prince}" ] || {
-  echo "ERROR: could not locate prince. Exiting."
+have_weasy=$(type -p weasyprint)
+[ "${have_prince}" ] || [ "${have_weasy}" ] || {
+  echo "ERROR: could not locate prince or weasyprint. Exiting."
   exit 1
 }
 have_jekyll=$(type -p jekyll)
@@ -25,10 +27,18 @@ echo 'Killing all Jekyll instances'
 kill -9 $(ps aux | grep '[j]ekyll' | awk '{print $2}')
 clear
 
+[ -x tools/build ] && tools/build
+
 echo "Building PDF-friendly HTML site for Product2 ...";
 jekyll serve --detach --config _config.yml,pdfconfigs/config_product2_pdf.yml;
 echo "done";
 
 echo "Building the PDF ...";
-prince --javascript --input-list=_site/pdfconfigs/prince-list.txt -o pdf/product2.pdf;
+if [ "${have_prince}" ]; then
+  prince --javascript --input-list=_site/pdfconfigs/prince-list.txt -o pdf/product2.pdf;
+else
+  [ "${have_weasy}" ] && {
+    weasyprint _site/pdfconfigs/prince-list.txt pdf/product2.pdf;
+  }
+fi
 echo "done";
