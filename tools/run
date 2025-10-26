@@ -2,6 +2,16 @@
 #
 # Run jekyll serve and then launch the site
 
+SCRIPT_PATH="$(
+  cd "$(dirname "$0")"
+  pwd -P
+)"
+have_real=$(type -p realpath)
+[ "${have_real}" ] && SCRIPT_PATH="$(realpath $SCRIPT_PATH)"
+TOP=$(dirname "${SCRIPT_PATH}")
+
+cd "${TOP}"
+
 prod=false
 command="bundle exec jekyll s -l"
 host="127.0.0.1"

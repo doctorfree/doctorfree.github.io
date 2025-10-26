@@ -1,5 +1,15 @@
 #!/bin/bash
 
+SCRIPT_PATH="$(
+  cd "$(dirname "$0")"
+  pwd -P
+)"
+have_real=$(type -p realpath)
+[ "${have_real}" ] && SCRIPT_PATH="$(realpath $SCRIPT_PATH)"
+TOP=$(dirname "${SCRIPT_PATH}")
+
+cd "${TOP}"
+
 have_prince=$(type -p prince)
 [ "${have_prince}" ] || {
   echo "ERROR: could not locate prince. Exiting."

@@ -1,6 +1,15 @@
 #!/bin/bash
 
-HERE=$(pwd)
+SCRIPT_PATH="$(
+  cd "$(dirname "$0")"
+  pwd -P
+)"
+have_real=$(type -p realpath)
+[ "${have_real}" ] && SCRIPT_PATH="$(realpath $SCRIPT_PATH)"
+TOP=$(dirname "${SCRIPT_PATH}")
+
+cd "${TOP}"
+
 for pdir in avsitterplus home tags
 do
   if [ -d pages/${pdir} ]; then
@@ -24,7 +33,7 @@ post_style: page" $i
       sed -i "/^title:/a\
 layout: post" $i
     done
-    cd "${HERE}"
+    cd "${TOP}"
   else
     echo "pages/${pdir} not found"
   fi

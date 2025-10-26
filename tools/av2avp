@@ -1,0 +1,30 @@
+#!/bin/bash
+#
+# CAUTION: this script is meant to be run on an AVsitter2 tree, preparing it for migration
+
+SCRIPT_PATH="$(
+  cd "$(dirname "$0")"
+  pwd -P
+)"
+have_real=$(type -p realpath)
+[ "${have_real}" ] && SCRIPT_PATH="$(realpath $SCRIPT_PATH)"
+TOP=$(dirname "${SCRIPT_PATH}")
+
+cd "${TOP}"
+find . -type f | while read i
+do
+  echo "$i" | grep /_posts/ >/dev/null && continue
+  echo "$i" | grep pages/avsitterplus/avsitterplus_home.md >/dev/null && {
+    echo "Check pages/avsitterplus/avsitterplus_home.md for occurrences of [AV] manually"
+    continue
+  }
+  echo "$i" | grep _tabs/about.md >/dev/null && {
+    echo "Check _tabs/about.md for occurrences of [AV] manually"
+    continue
+  }
+  grep '\[AV\]' "$i" >/dev/null && {
+    cat "$i" | sed -e "s/\[AV\]/AVP_/g" > /tmp/out$$
+    cp /tmp/out$$ "$i"
+    rm -f /tmp/out$$
+  }
+done

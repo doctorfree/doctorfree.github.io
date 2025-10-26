@@ -1,0 +1,27 @@
+#!/bin/bash
+
+SCRIPT_PATH="$(
+  cd "$(dirname "$0")"
+  pwd -P
+)"
+have_real=$(type -p realpath)
+[ "${have_real}" ] && SCRIPT_PATH="$(realpath $SCRIPT_PATH)"
+TOP=$(dirname "${SCRIPT_PATH}")
+
+cd "${TOP}"
+
+have_bundle=$(type -p bundle)
+[ "${have_bundle}" ] || {
+  echo "ERROR: cannot locate bundle utility. Exiting."
+  exit 1
+}
+
+[ "$1" ] || {
+  echo 'Usage: ./newpage "My New Page" [options]'
+  exit 1
+}
+
+title="$1"
+shift
+
+bundle exec jekyll page "${title}" $*
