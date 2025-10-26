@@ -1,9 +1,9 @@
 ---
 title: AVsitterPlus Examples
-keywords: examples
-sidebar: avsitterplus_sidebar
+layout: post
+post_style: page
+tags: examples
 permalink: avsitterplus_examples.html
-folder: avsitterplus
 ---
 
 ## AVsitterPlus Examples

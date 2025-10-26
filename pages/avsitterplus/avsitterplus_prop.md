@@ -1,10 +1,9 @@
 ---
 title: AVP_prop&trade;
-summary: AVP_prop allows AVsitterPlus&trade; to rez props and can also be used as a standalone prop rezzer in creations without seating. Props are inworld objects rezzed on the land. Props can also become avatar attachments.
-keywords: plugin, prop
-sidebar: avsitterplus_sidebar
+layout: post
+post_style: page
+tags: plugin, prop
 permalink: avsitterplus_prop.html
-folder: avsitterplus
 ---
 
 {% include note.html content="Props are not TEMP_ON_REZ and will count towards land prim limits." %}

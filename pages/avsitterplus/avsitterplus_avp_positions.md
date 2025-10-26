@@ -1,9 +1,9 @@
 ---
 title: The AVP_Positions Notecard
-keywords: AVsitterPlus
-sidebar: avsitterplus_sidebar
+layout: post
+post_style: page
+tags: AVsitterPlus
 permalink: avsitterplus_avp_positions.html
-folder: avsitterplus
 ---
 
 ## The AVP_Positions Notecard

@@ -1,9 +1,9 @@
 ---
 title: Step by Step Guide - MLP Converter
-keywords: AVsitterPlus
-sidebar: avsitterplus_sidebar
+layout: post
+post_style: page
+tags: AVsitterPlus
 permalink: avsitterplus_StepByStepGuides_MLPconverter.html
-folder: avsitterplus
 ---
 
 ### MLP-converter script

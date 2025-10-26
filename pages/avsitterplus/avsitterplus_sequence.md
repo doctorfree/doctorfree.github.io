@@ -1,9 +1,9 @@
 ---
 title: AVP_sequence&trade;
-keywords: sequence
-sidebar: avsitterplus_sidebar
+layout: post
+post_style: page
+tags: sequence
 permalink: avsitterplus_sequence.html
-folder: avsitterplus
 ---
 
 ## AVP_sequence&trade;

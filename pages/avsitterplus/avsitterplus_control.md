@@ -1,9 +1,9 @@
 ---
 title: AVP_control&trade;
-keywords: plugin, control
-sidebar: avsitterplus_sidebar
+layout: post
+post_style: page
+tags: plugin, control
 permalink: avsitterplus_control.html
-folder: avsitterplus
 ---
 
 ## AVP_control&trade;

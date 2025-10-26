@@ -1,7 +1,10 @@
 ---
+title: In-world Updates
 layout: post
-toc: true
 post_style: page
+tags: updates, release notes
+permalink: updates.html
+toc: false
 ---
 
 ## Updates in Second Life

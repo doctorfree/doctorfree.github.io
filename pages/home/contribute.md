@@ -1,7 +1,11 @@
 ---
+title: Contributor Guidelines
 layout: post
-toc: true
 post_style: page
+summary: The AVsitterPlus Project is open-source and welcomes help from the community.
+tags: mydoc
+toc: false
+permalink: contribute.html
 ---
 
 ## Scripting contributions

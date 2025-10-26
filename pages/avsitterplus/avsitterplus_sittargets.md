@@ -1,9 +1,9 @@
 ---
 title: About SitTargets
-keywords: AVsitterPlus
-sidebar: avsitterplus_sidebar
+layout: post
+post_style: page
+tags: AVsitterPlus
 permalink: avsitterplus_sittargets.html
-folder: avsitterplus
 ---
 
 ## About SitTargets

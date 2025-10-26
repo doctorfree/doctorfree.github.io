@@ -1,11 +1,10 @@
 ---
 title: AVsitterPlus
-summary:
-keywords: AVsitterPlus
-sidebar: avsitterplus_sidebar
+layout: post
+post_style: page
+tags: AVsitterPlus
 toc: true
 permalink: avsitterplus_home.html
-folder: avsitterplus
 ---
 
 ## What is AVsitterPlus

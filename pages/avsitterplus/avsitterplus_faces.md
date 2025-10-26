@@ -1,9 +1,9 @@
 ---
 title: AVP_faces&trade;
-keywords: plugin, faces
-sidebar: avsitterplus_sidebar
+layout: post
+post_style: page
+tags: plugin, faces
 permalink: avsitterplus_faces.html
-folder: avsitterplus
 ---
 
 ## AVP_faces&trade;

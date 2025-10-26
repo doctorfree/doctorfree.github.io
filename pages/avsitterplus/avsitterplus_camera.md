@@ -1,9 +1,9 @@
 ---
 title: AVP_camera
-keywords: camera
-sidebar: avsitterplus_sidebar
+layout: post
+post_style: page
+tags: camera
 permalink: avsitterplus_camera.html
-folder: avsitterplus
 ---
 
 ## AVP_camera script

@@ -1,7 +1,8 @@
 ---
 title: LSL Scripting
-keywords: AVsitterPlus
-sidebar: avsitterplus_sidebar
+layout: post
+post_style: page
+tags: AVsitterPlus
 permalink: avsitterplus_scripting.html
 ---
 

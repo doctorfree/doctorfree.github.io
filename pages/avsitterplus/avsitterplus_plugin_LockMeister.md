@@ -1,9 +1,9 @@
 ---
 title: The LockMeister plugin
-keywords: AVsitterPlus, LockMeister
-sidebar: avsitterplus_sidebar
+layout: post
+post_style: page
+tags: AVsitterPlus, LockMeister
 permalink: avsitterplus_plugin_LockMeister.html
-folder: Plugins
 ---
 
 # The LockMeister plugin

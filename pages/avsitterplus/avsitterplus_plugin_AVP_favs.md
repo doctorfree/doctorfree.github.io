@@ -1,9 +1,9 @@
 ---
 title: The AVP_favs plugin
-keywords: AVsitterPlus, avfavs
-sidebar: avsitterplus_sidebar
+layout: post
+post_style: page
+tags: AVsitterPlus, avfavs
 permalink: avsitterplus_plugin_AVP_favs.html
-folder: Plugins
 ---
 
 # AVP_favs

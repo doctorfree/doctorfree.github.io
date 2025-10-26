@@ -1,7 +1,10 @@
 ---
+title: AVsitterPlus Support
 layout: post
-toc: true
 post_style: page
+tags: support
+permalink: support.html
+toc: false
 ---
 
 ## Getting help with using AVsitterPlus
