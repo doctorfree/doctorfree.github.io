@@ -1,406 +1,540 @@
 ---
-layout: post
-post_style: page
+layout: page
 icon: fas fa-plus-circle
 toc: true
-order: 2
+order: 3
 ---
 
-- [Asciiville configuration](#asciiville-configuration)
-- [Asciiville utilities configuration](#asciiville-utilities-configuration)
-  - [Kitty SSH terminfo configuration](#kitty-ssh-terminfo-configuration)
-  - [Neovim text editor configuration](#neovim-text-editor-configuration)
-  - [Newsboat RSS feed reader configuration](#newsboat-rss-feed-reader-configuration)
-  - [NeoMutt email configuration](#neomutt-email-configuration)
-  - [Mutt email configuration](#mutt-email-configuration)
-  - [Tuir Reddit client configuration](#tuir-reddit-client-configuration)
-- [Homebrew administration](#homebrew-administration)
+## The AVP_Positions Notecard
 
-### Asciiville configuration
+Nearly every feature of AVsitterPlus can be controlled by editing the AVP_Positions notecard. It defines everything about each SITTERs menu and poses. Much more is possible when you learn to manually write and edit the notecard yourself, rather than using only the [NEW] menu as described in the [Setup](/avsitterplus_home.html#setup) section.
 
-Asciiville preferences are maintained in `$HOME/.config/asciiville/config`.
-Preferences set in interactive menu mode are preserved over invocations
-of `asciiville`. For example, if a command and terminal were selected
-in interactive menu mode then those selections will automatically be
-applied the next time `asciiville` is run.
+{% include note.html content="Your AVP_Positions notecard should always be left as 'full perm', otherwise scripts can not read the notecard with the next owner." %}
 
-After installing Asciiville, initialize Asciiville configuration and
-install additional features by executing the `ascinit` command as a normal
-user with `sudo` privilege. The `ascinit` command will customize the
-configuration of several Asciiville packages and install additional packages.
+### Basic Notecard
 
-If you wish to perform a "console" initialization on a headless system or a
-system on which there is no available X Server, then execute the command
-`ascinit -c` rather than `ascinit`. A "console" initialization skips the
-installation of several graphical utilities including the terminal emulators
-that Asciiville uses when in desktop mode. In addition, a "console"
-initialization copies several `mailcap` files tailored for use on a console.
-These `mailcap` files generally try to display images and video using
-text-based character graphics on a console.
-
-```console
-# Execute the ascinit command:
-ascinit
-# Or, on a console system without the X11 windowing system:
-ascinit -c
-```
-
-A sample Asciiville configuration file is provided below. In this sample
-configuration the _ARTDIR_ is set to `/usr/share/asciiville/art`, the default
-Asciiville Ascii Art galleries folder. To change the Ascii Art galleries folder,
-modify this setting. For example, to change where `asciiville` looks for
-Ascii Art galleries, this setting could be modified to:
+If we want to quickly write a notecard for one avatar, with a choice of two poses, where our animation files are called "animation1" and "animation2" and we want to name the poses "Sit1" and "Sit2". We would simply type the following into the AVP_Positions notecard:
 
 ```
-ARTDIR=${HOME}/Pictures/AsciiArt
+POSE Sit1|animation1
+POSE Sit2|animation2
 ```
 
-Asciiville commands would then look in `$HOME/Pictures/AsciiArt`
-for Ascii Art galleries rather than `/usr/share/asciiville/art`.
-
-Of particular interest are the `art_font_size` and `txt_font_size`
-configuration settings. These control the size of the font used to
-display Ascii Art slideshows and the Figlet text in slideshows.
-Individual display devices differ in resolution. Terminal emulator
-windows used for display of Ascii Art vary in number of rows and columns
-available. The Ascii Art included with Asciiville was generated in fairly
-high resolution. Reducing the `art_font_size` will decrease the amount
-of screen the art display requires while increasing that font size will
-increase the size of the art displayed. Similarly, decreasing or increasing
-the `txt_font_size` will shrink or enlargen the Figlet text displayed.
-The default settings for these two configuration parameters are '4' and
-'20'. If the art displayed during a slideshow is too small or you wish
-to make it larger, change `art_font_size=4` to `art_font_size=6` and
-`txt_font_size=20` to `txt_font_size=24`. Some experimentation may be
-required to fit the art to your display and terminal emulator window.
-On a display with resolution 2560x1440 pixels, setting `art_font_size=8`
-and `txt_font_size=28` provides a larger display of Asciiville ascii art
-that fills most of the screen.
-
-A sample Asciiville configuration file `$HOME/.config/asciiville/config`:
+After you adjust and [SAVE] each of the poses and [DUMP] the settings, it would look like this:
 
 ```
-ARTDIR=/usr/share/asciiville/art
-MUSEDIR=/usr/share/asciiville/music
-SONG=/home/ronnie/Music/Buckingham_Green.mp3
-ALTSONG=/Epic_Dramatic-Yuriy_Bespalov.wav
-AUDIO=1
-BROWSER=w3m
-COMMAND=newsboat
-FULLSCREEN=
-LOLCAT="lolcat"
-MTITLE="RSS Feeds"
-CURRENT=
-GNOME=1
-RETRO=
-TILIX=
-XFCE4=
-use_lolcat=1
-use_lol=YES
-journal="asciiville"
-style="fancy"
-art_font_size=8
-txt_font_size=28
-defchars='   ...,;:clodxkO0KXNWM'
-revchars='MWNXK0Okxdolc:;,...   '
-revlong='WMZO0QLCJUYXzcvun1il;:,^.. '
-longchars=' ..^,:;li1nuvczXYUJCLQ0OZMW'
+POSE Sit1|animation1
+POSE Sit2|animation2
+{Sit1}<0.000000, 0.000000, 1.000000><0.000000, 0.000000, 0.000000>
+{Sit2}<0.000000, 0.000000, 1.000000><0.000000, 0.000000, 0.000000>
 ```
 
-### Asciiville utilities configuration
+Note that position settings for the poses will be added by the script after you adjust, [SAVE] and [DUMP] your settings.
 
-Asciiville creates several default configuration files for utilities
-included in the distribution. Examine these files to further customize
-each program. The default configuration generated when running the
-`ascinit` command should suffice and may be satisfactory.
+## Notecard Commands
 
-Generated configuration files include:
+This section outlines each of the notecard commands you can use.
 
-- `$HOME/.config/btop/btop.conf` : Btop++ system monitor
-- `$HOME/.config/got/config.yml` : Got text translation tool
-- `$HOME/.config/neofetch/config.conf` : NeoFetch system info script
-- `$HOME/.config/neomutt/` : NeoMutt email client startup files
-- `$HOME/.config/nvim-Lazyman/` : Neovim text editor configuration and startup files
-- `$HOME/.config/jrnl/` : Journal command `jrnl` configuration file
-- `$HOME/.config/khard/khard.conf` : Address book `khard` configuration file
-- `$HOME/.config/ranger/rifle.conf` : Rifle, Ranger's file opener
-- `$HOME/.config/tuir/` : TUIR terminal UI for Reddit configuration files
-- `$HOME/.mutt/muttrc` : Mutt email client
-- `$HOME/.newsboat/` : Newsboat RSS feed reader configuration files
-- `$HOME/.rainbow_config.json` : Rainbowstream Twitter client
-- `$HOME/.tmux.conf` : Tmux terminal multiplexer
-- `$HOME/.w3m/` : W3M web browser custom configuration
-  - W3M web browser configured to act as a Markdown pager
-  - W3M configuration enables support for many MIME types and external apps
+{% include important.html content="Make sure to see the next section that shows [notecard examples](/avsitterplus_avp_positions.html#example-notecards) and examine the contents of the Examples [BOX]." %}
 
-These override or extend the settings in the utilities' global configuration
-files, typically installed in `/etc/`. For example, the global configuration
-for the Ranger File Manager can be found in `/etc/ranger/config/`. The W3M
-web browser is configured in `/etc/w3m/`, and the NeoMutt global config is
-`/etc/neomuttrc`.
+### POSE
+Use the POSE command to add an animation to the menu. The format is:
 
-After installing Asciiville and running the `ascinit` command, initialize the
-the command line Twitter client by invoking the `rainbowstream` command and
-authorizing the app to access your Twitter account.
+    POSE <menu_name>|<animation_filename>
 
-#### Kitty SSH terminfo configuration
+i.e.
 
-When using the Kitty terminal emulator to `ssh` into systems you may see the
-error message "Unknown terminal type 'xterm-kitty'" or similar. To remedy this,
-either manually install the Kitty terminfo entry or use the Kitty `ssh kitten`:
+    POSE Sit1|animation1
 
-```shell
-kitty +kitten ssh <hostname>
-```
+{% include note.html content="[Internal SL animations](http://wiki.secondlife.com/wiki/Internal_Animations) can be used in AVsitterPlus without the animation file existing in the furniture." %}
 
-The ssh kitten will automatically copy the Kitty terminfo entry to the remote system.
+### SYNC
+Use the SYNC command for couple/group animations (e.g. cuddles). When a SYNC animation is played it will play all SYNC poses of the same &lt;menu_name&gt; in all SITTERs within the prim. Usually you would add a SYNC of the same name to each SITTER, using different animations for each SITTER (e.g. Female in *first* SITTER, male in *second* SITTER). The format is:
 
-#### Neovim text editor configuration
+    SYNC <menu_name>|<animation_filename>
 
-The `ascinit` Asciiville initialization installs a current version of
-[Neovim](https://neovim.io){:target="_blank"}{:rel="noopener noreferrer"} and extensively configures and extends the
-`nvim` text editor with plugins, configuration files, keyboard mappings,
-color schemes, syntax highlighting, language servers, and settings.
+i.e.
 
-We here in Asciiville are pretty proud of our Neovim setup and we wanted
-to share it with you. The installation and configuration of Neovim is
-entirely automated.
+    SYNC Cuddle|hug_female
 
-Neovim is not required for most of the use cases Asciiville supports but
-it can prove to be quite useful in a text-based environment. However,
-installation of Neovim is optional and the `ascinit` command will prompt
-to see if you wish to install it. We recommend installing Neovim and trying
-it out. If later you decide you do not need Neovim then it can be removed
-with the command `ascinit -r neovim`.
+### TOMENU
+This creates a button that leads to a submenu. You will need to have a corresponding MENU line. The format is:
 
-The Asciiville configuration of Neovim is quite extensive and fairly complex.
-See the [Lazyman README](https://github.com/doctorfree/nvim-lazyman#readme){:target="_blank"}{:rel="noopener noreferrer"}
-for an introductory tour of the configuration, plugins, settings, and usage of Neovim.
+    TOMENU <menu_name>
 
-After installing and initializing Asciiville with `ascinit`, try out
-Neovim by running the command:
+i.e.
 
-```shell
-NVIM_APPNAME="nvim-Lazyman" nvim
-```
+    TOMENU SITS
 
-While running `nvim` perform a Neovim health check by issuing the Neovim command:
+### MENU
+Begins a submenu. All POSE, SYNC, TOMENU and BUTTON commands that come under a MENU line will be placed in the submenu. You must use a TOMENU command somewhere higher up in the notecard to be able to access the submenu. The format is:
 
-```vim
-:checkhealth
-```
+    MENU <menu_name>
 
-The Asciiville Neovim configuration provides one of the best development
-environments available. It is hoped that we here in Asciiville will soon
-be able to leverage this incredible text editing facility to augment our
-creation of Ascii Art. Here are a couple of screenshots of Neovim using
-the Asciiville setup:
+i.e.
 
-<div align="center">
-<p>
-  <img src="https://raw.githubusercontent.com/doctorfree/Asciiville/main/screenshots/neovim-asciiville.png" style="width:800px;height:600px;" alt="neovim">
-<br/>
-  <img src="https://raw.githubusercontent.com/doctorfree/Asciiville/main/screenshots/neovim-search.png" style="width:800px;height:600px;" alt="neovim">
-</p>
+    MENU SITS
+
+{% include note.html content="To hide poses from the menu (e.g. because they are triggered by a sequence or script and you don't want them to appear individually), place them under a MENU line that has no corresponding TOMENU line (e.g. [MENU HIDDEN](/avsitterplus_sequence.html#hiding-poses))." %}
+
+### BUTTON
+This creates a button that can be used for customization of your creations, so users can do more than just choose animations with your menus. When selected by an avatar, a button will send a "link message" that can be received by your own scripts. The format is:
+
+    BUTTON <menu_name>|<custom_integer>|<custom_string>|<custom_key>
+
+
+- If &lt;custom_string&gt; is empty then &lt;menu_name&gt; will be used as the string.
+- If &lt;custom_integer&gt; is empty then 90200 will be used (90200 is used specifically by the [AVP_prop plugin](/avsitterplus_prop.html)).
+- If &lt;custom_integer&gt; is set to [90005](/avsitterplus_scripting.html#message-90005) then the menu will be returned automatically.
+- If &lt;custom_key&gt; is empty then the avatar's UUID will be used as the key. If a different avatar is controlling the menu with [AVP_control](/avsitterplus_control.html) then the key will include the controller and sitter UUIDs, separated by the pipe (`|`) character.
+- Two special values have been added for &lt;custom_key&gt;: `<C>` and `<S>`, which will be replaced with CONTROLLER and SITTER respectively. This is to avoid issues with generic scripts that respond to a link message without being specifically designed for AVsitterPlus, because they don't expect the extra UUID.
+- If &lt;menu_name&gt; is empty, then an empty button will be created.
+
+e.g.
+
+    BUTTON Press Me|99
+
+Will send a link message with integer 99, string "Press Me" and the avatar's UUID.
+
+Same as: `llMessageLinked(LINK_SET,99,"Press Me",<avatar_uuid>);`
+
+e.g.
+
+    BUTTON Press Me|90005
+Using 90005 will also return the menu to the avatar who pressed the button.
+
+e.g.
+
+    BUTTON Press Me|99|Hello
+
+Will send a link message with integer 99, string "Hello" and the avatar's UUID.
+
+Same as: `llMessageLinked(LINK_SET,99,"Hello",<avatar_uuid>);`
+
+e.g.
+
+    BUTTON Press Me|90030|0|1
+
+Will send a link message with integer [90030](/avsitterplus_scripting.html#message-90030), string "0" and key "1".
+
+Same as: `llMessageLinked(LINK_SET,90030,"0","1");`
+
+e.g.
+
+    BUTTON Press Me
+
+Will send a link message with integer [90200](/avsitterplus_prop.html#message-90200--90220), string "Press Me" and the avatar's UUID.
+
+Same as: `llMessageLinked(LINK_SET,90200,"Press Me",<avatar_uuid>);`
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i>
+<b>Note:</b> If you want to replace the system's functionality while keeping the default button label, it's possible to use the zero-width space Unicode character `U+200B` to make it different to the script but identical visually. You can copy/paste that character from here: <code>(​)</code>.
+<br />
+For example:
+
+<pre>
+BUTTON [SWAP]​|99
+</pre>
+
+places a button whose label is identical to the system [SWAP] label, but it will send a link message with integer 99. Our custom script would react to this.
 </div>
+### TEXT
+Placed once at the top of the notecard, this will add a line of custom text to your menu. The format is:
 
-#### Newsboat RSS feed reader configuration
+    TEXT <custom_text>
 
-The [Newsboat](https://github.com/newsboat/newsboat){:target="_blank"}{:rel="noopener noreferrer"} character based RSS feed
-reader is a quick and easy way to view configured RSSS feeds. Newsboat is
-very lightweight and displays its list of configured feeds and articles almost
-immediately. It's an excellent way to get a quick glimpse of News, Articles,
-Blog posts, Twitter feeds, and more. Asciiville provides a default initial
-configuration for Newsboat that includes RSS feeds for News sources, YouTube
-channels, Reddit subreddits, Twitter feeds, Github repositories, Blogs, and
-online Comics. To reconfigure Newsboat with the RSS feeds you wish to follow,
-edit the file `$HOME/.newsboat/urls`.
+i.e.
 
-Asciiville also provides a default Newsboat reader configuration with key
-bindings, formatting, and other Newsboat view and usage parameters. To adjust
-the way Newsboat displays feeds, formats output, and responds to input,
-edit the file `$HOME/.newsboat/config`.
+    TEXT Welcome to my creation!
 
-#### NeoMutt email configuration
+You can also include "\n" to start a new line.
 
-The [NeoMutt](https://neomutt.org/){:target="_blank"}{:rel="noopener noreferrer"} email client is an improved Mutt client.
-Asciiville installs NeoMutt as a dependency and provides support for configuring
-and launching NeoMutt. Setup for NeoMutt is similar to setup for Mutt.
+i.e.
 
-The `ascinit` command creates an initial NeoMutt configuration in
-`$HOME/.config/neomutt/`. In order to use the NeoMutt email client it will be
-necessary to configure `$HOME/.config/neomutt/accounts/*` with your name,
-email address, and credentials. The default NeoMutt user configuration files
-configure NeoMutt for use with GMail. This can be modified by editing the
-accounts configured in `$HOME/.config/neomutt/neomuttrc`.
+    TEXT First Line!\nSecond Line!
 
-Asciiville provides three preconfigured NeoMutt email accounts -
-`$HOME/.config/neomutt/accounts/gmail`, `$HOME/.config/neomutt/accounts/main`,
-and `$HOME/.config/neomutt/accounts/cruzio`. The `accounts/gmail` NeoMutt
-account is enabled by default while the other two are disabled by default.
-The `main` account is a vanilla account with a basic configuration while the
-`gmail` and `cruzio` accounts are highly curated and take advantage of some
-advanced NeoMutt features. The `gmail` account is tailored for use with GMail
-and the `cruzio` account is tailored for use with Cruzio, an independent
-internet service provider in Santa Cruz, California. Cruzio was founded in
-1989 by Chris and Peggy and has remained 100% locally owned and staffed.
-The citizens of Asciiville encourage the patronage of independent locally
-owned internet service providers.
+### MTYPE
+Placed once at the top of the notecard, this controls the "menu type" for all SITTERs. Allows various menu options.
 
-In addition to the three preconfigured NeoMutt email accounts, Asciiville
-also provides a preconfigured NNTP account. One of NeoMutt's advanced
-features is the ability to act as an NNTP client, enabling it to read
-and post to Usenet newsgroups. The NeoMutt account
-`$HOME/.config/neomutt/accounts/nntp`, when enabled in `neomuttrc`,
-can be used to connect to a Usenet Newsgroup server. The `nntp` account
-uses `news.eternal-september.org` as the default NNTP server. In order
-to access this Usenet server a free registration at
-<https://www.eternal-september.org/RegisterNewsAccount.php>
-is required.
+    MTYPE 0
 
-Comments in `$HOME/.config/neomutt/accounts/gmail`
-provide pointers to configuring your credentials with GMail. If Google 2FA
-Authentication is enabled in your Google account, create an App password for
-NeoMutt. See
-[https://security.google.com/settings/security/apppasswords](https://security.google.com/settings/security/apppasswords){:target="_blank"}{:rel="noopener noreferrer"}
+The default. Gives the menu to the sitting avatar when they sit and also when they touch the furniture.
 
-NeoMutt can use the output of external commands to set a configuration value.
-Storing a password in a configuration file is generally a bad idea. Passwords
-and other sensitive material can be stored elsewhere and a command used to
-retrieve and set them in the configuration file. Storing a plain text password
-in a file and reading that file from the NeoMutt configuration is better than
-placing the password directly in the configuration file. But it is still plain
-text in a file somewhere. A more secure manner of storing passwords can be
-implemented using encryption with utilities like PGP or GPG.
+    MTYPE 1
 
-The Asciiville configuration of NeoMutt is quite extensive and fairly complex.
-See the
-[Asciiville NeoMutt README](https://github.com/doctorfree/Asciiville/blob/main/conf/neomutt/README.md){:target="_blank"}{:rel="noopener noreferrer"}
-for an introductory tour of the configuration, settings, and usage of NeoMutt
-including the use of encrypted passwords and NeoMutt key bindings.
+Gives the menu to the sitting avatar only when they touch the furniture. The menu returns as soon as a pose is selected.
 
-#### Mutt email configuration
+    MTYPE 2
 
-Alternatively, you may prefer using the older but still maintained and robust
-[Mutt](https://www.mutt.org/){:target="_blank"}{:rel="noopener noreferrer"} email client. Asciiville checks to see if Mutt
-is installed and, if so, provides support for launching it as well as NeoMutt.
-Mutt and NeoMutt can coexist peacefully.
+Same as MTYPE 1, except the menu does not automatically return when a pose is selected.
 
-Mutt is not installed as a dependency during the Asciiville installation.
-If you wish to use the Mutt integration in Asciiville, Mutt must be installed.
-A Mutt installation and Asciiville Mutt configuration can be accomplished
-by running the command `ascinit -m` or `ascinit -M` for both Mutt and NeoMutt.
-If no text based email client is desired, then configuration for both Mutt
-and NeoMutt can be skipped by executing `ascinit -N` during initialization.
+    MTYPE 3
 
-In order to use the Mutt email client it will be necessary to configure
-`$HOME/.mutt/.muttrc` with your email address, name, and credentials.
-Comments in `$HOME/.mutt/.muttrc` provide pointers to configuring your
-credentials with GMail. If Google 2FA Authentication is enabled in your
-Google account, create an App password for NeoMutt. See
-[https://security.google.com/settings/security/apppasswords](https://security.google.com/settings/security/apppasswords){:target="_blank"}{:rel="noopener noreferrer"}
+With MTYPE 3 the menu is completely switched off and cannot be accessed (except via [link message 90005](/avsitterplus_scripting.html#message-90005) or [AVP_root script](/avsitterplus_utilities.html#avroot-script) or [AVP_root-security](/avsitterplus_utilities.html#avroot-security-script)). You might want this if you have only one pose in the furniture, and don't want a menu.
 
-Asciiville `ascinit` Mutt initialization does not overwrite any previously
-existing Mutt configuration files in `$HOME/.mutt/`. However, you may want
-to examine the Mutt configuration provided in Asciiville by viewing the files
-in `/usr/share/asciiville/mutt/`. If you want to use the Asciiville Mutt setup
-files rather than your previously configured setup, move the existing
-`$HOME/.mutt/` folder aside and rerun `ascinit`.
+    MTYPE 4
 
-There are many Mutt configuration guides on the Internet.
-ArchLinux has a good guide at
-[https://wiki.archlinux.org/title/Mutt](https://wiki.archlinux.org/title/Mutt){:target="_blank"}{:rel="noopener noreferrer"}.
+Same as MTYPE 3, except the menu does not automatically return when a pose is selected.
 
-#### Tuir Reddit client configuration
+{% include important.html content="Please note that MTYPE will be ignored when using the [AVP_control&trade;](/avsitterplus_control.html) plugin." %}
 
-The `tuir` command is a text based user interface for Reddit. A `tuir`
-configuration is setup as part of the `ascinit` Asciiville initialization
-and this configuration should work well for most users. However, if you wish to
-login to your Reddit account using `tuir` then you will first need to generate
-an OAuth client id and secret with Reddit. This process is described at:
+### ETYPE
+Placed once at the top of the notecard, this controls the "exit type" for all SITTERs. Controls SYNC pose behavior when another pose is played in the same prim. NOTE: does not cancel a SYNC if an avatar simply stands up (for that see the [Autoplay script example](/avsitterplus_lsl_example_autoplay.html)).
 
-[https://github.com/reddit-archive/reddit/wiki/oauth2](https://github.com/reddit-archive/reddit/wiki/oauth2){:target="_blank"}{:rel="noopener noreferrer"}
+    ETYPE 0
 
-First visit
-[https://www.reddit.com/prefs/apps/](https://www.reddit.com/prefs/apps/){:target="_blank"}{:rel="noopener noreferrer"}
-and click "Create another app ..." at the bottom of the page. You can use
-whatever you like for the Name of the app, I used 'tuir'. Make sure that the
-'redirect uri' is `http://127.0.0.1:65000/` or whatever you have set it to in
-`$HOME/.config/tuir/tuir.cfg` (most configurations will be unchanged and
-can use `http://127.0.0.1:65000/`). I left the 'about url' blank.
+Switches off ETYPE. i.e. will not return avatars to the first pose in their menu, even if SYNC that excludes them is played in the prim.
 
-After you have completed the process of creating a new app in Reddit,
-update your `$HOME/.config/tuir/tuir.cfg` with your new `oauth_client_id`
-and `oauth_client_secret`. These can be found back up towards the top of
-the newly created app page.
+    ETYPE 1
 
-After updating `tuir.cfg` with the new id and secret, open `tuir` and attempt
-to login the Reddit by pressing the 'u' key while in tuir. This should open
-your default browser and take you to Reddit where you can give your new app
-authorization, leave the browser, and go back to `tuir` where you should now
-be logged in.
+The default. Avatars in a SYNC return to the first pose in their menu if someone in the SYNC plays a pose that doesn't include them.
 
-### Homebrew administration
+    ETYPE 2
 
-Beginning with Asciiville version 3.0.2 the `ascinit` initialization process
-installs Homebrew and uses the `brew` package manager to install Asciiville
-components and their dependencies. Using Homebrew allows the installation of
-more recent versions of packages than is supported by some native package
-managers (especially on Ubuntu Linux) and Homebrew is cross-platform allowing
-the same installation process on all Linux distributions and Apple macOS.
+Avatars in a SYNC will be "unseated" if a pose that does not include them is played in the prim.
 
-The use of an alternate package manager can and probably will result in
-some duplicate package installs, one previously installed with the native
-package manager and another installed during Asciiville initialization by `brew`.
-Homebrew is nicely isolated from the system packages and the duplicate packages
-typically will not create a conflict or issue. The shell execution `PATH`
-environment variable will determine which package is used.
+### SITTER
+Begins the menu section for each avatar. The number of SITTER sections should match the number of AVP_sit (A+B) pairs of scripts you have in the prim. SITTER numbering starts at 0. A notecard that contains the info for 3 sitters would have 3 SITTER sections.
 
-However, it may be desirable to remove package duplicates both for disk space
-and to avoid any possible conflict. Asciiville provides a convenience script
-to locate duplicate packages installed on the system. To list identified
-duplicate packages, execute the command:
+e.g.
 
-```shell
-/usr/share/asciiville/tools/bin/brewdups
+```
+SITTER 0
+POSE Sit1|animation1
+...
+
+SITTER 1
+POSE Sit1|animation1
+...
+
+SITTER 2
+POSE Sit1|animation1
+...
 ```
 
-To remove all identified duplicate packages:
+Each SITTER section must contain the entire menu for one sitting location.
 
-```shell
-/usr/share/asciiville/tools/bin/brewdups -r
+You may also name each SITTER by including your own text. This text will be shown in the menu dialog, and in the select menu as the button for the SITTER if you are using the [AVP_select script](/avsitterplus_utilities.html#avselect-script).
+
+e.g.
+
+```
+SITTER 0|Female
+POSE Sit1|animation1
+...
+
+SITTER 1|Male
+POSE Sit1|animation1
+...
 ```
 
-Removal of duplicate packages poses some risk. For example, there may be
-duplicate packages used by other users on the system who do not have Homebrew
-in their execution PATH. If duplicate system packages are removed it is a
-good idea to add the following to all users' shell startup files
-(e.g. `.profile`, `.bashrc`, `.zshrc`):
 
-```shell
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+### SET
+Placed once at the top of the notecard, this assigns a SET # to all SITTERs. Use only if you need to [assign SitTargets](/avsitterplus_sittargets.html).
+
+i.e.
+
+    SET 0
+
+### SELECT
+Placed once at the top of the notecard, this controls menu behavior when using the [AVP_select script](/avsitterplus_utilities.html#avselect-script).
+
+    SELECT 0
+
+The default. The [AVP_select](/avsitterplus_utilities.html#avselect-script) menu shows a disabled symbol (<span style="font-size:150%;">&oslash;</span>) for an occupied seat. The symbol is shown only while solo POSE is being played and not during a SYNC.
+
+    SELECT 1
+
+No disabled symbol will be shown in the [AVP_select](/avsitterplus_utilities.html#avselect-script) menu and avatars will always be able to swap into an occupied seat.
+
+    SELECT 2
+
+The disabled symbol (<span style="font-size:150%;">&oslash;</span>) will always be shown for an occupied seat.
+
+### SWAP
+Placed once at the top of the notecard, enables/disables the [SWAP] buttons in the menu.
+
+    SWAP 0
+
+Disables [SWAP] in the menu. (note: you can still add your own custom swaps using [link message 90030](/avsitterplus_scripting.html#message-90030)).
+
+    SWAP 1
+
+Adds [SWAP] button at the top level of the menu. [SWAP] is only available when there are multiple SITTERs in the prim.
+
+    SWAP 2
+
+The default. Adds [SWAP] in all submenus, not just the top level of the menu.
+
+{% include important.html content="When playing a POSE, [SWAP] will move the avatar to the first *unoccupied* SITTER (if available)." %}
+
+{% include important.html content="When playing a SYNC, [SWAP] will exchange places with the first *occupied* SITTER (if available)." %}
+
+{% include note.html content="You can override SWAP 0 or SWAP 1 and make [SWAP] appear for a specific submenu (see [here](http://avsitter.com/qa/652))." %}
+
+{% include warning.html content="The optional [AVP_select script](/avsitterplus_utilities.html#avselect-script) completely replaces the normal [SWAP] buttons." %}
+
+### ADJUST
+Placed once at the top of the notecard, allows addition of custom buttons to the [ADJUST] menu.  When selected by an avatar, the button will send a "link message" that can be received by your own scripts. The format is:
+
+    ADJUST <button_name>|<custom_integer>|<button_name>|<custom_integer> ...
+
+The link message will send the &lt;button_name&gt;, &lt;custom_integer&gt;, and the UUID of the avatar, i.e.
+
+    ADJUST [COLOR]|200|[TEXTURE]|300
+
+Will add the buttons [COLOR] and [TEXTURE] to the [ADJUST] menu.
+
+The UUID of the avatar is also sent. When a different avatar is controlling the menu with [AVP_control](/avsitterplus_control.html), then [ADJUST] sends the controller and sitter UUIDs, separated by the pipe (`|`) character.
+
+To override this and provide compatibility with generic scripts that respond to link messages, see [AMENU](#amenu).
+
+### AMENU
+Placed once at the top of the notecard, enables and disables the [ADJUST] menu.
+
+    AMENU 0
+
+Removes [ADJUST] completely from the menu.
+
+    AMENU 1
+
+Adds [ADJUST] button only at the top level of the menu.
+
+    AMENU 2
+
+The default. Adds [ADJUST] in all submenus, not just the top level of the menu.
+
+    AMENU 4
+
+Same as `AMENU 0`, but custom buttons under the [ADJUST] menu will not send the second UUID (see [ADJUST](#adjust))
+
+    AMENU 5
+
+Same as `AMENU 1`, but custom buttons under the [ADJUST] menu will not send the second UUID (see [ADJUST](#adjust))
+
+    AMENU 6
+
+Same as `AMENU 2`, but custom buttons under the [ADJUST] menu will not send the second UUID (see [ADJUST](#adjust))
+
+(As we can see, what we're doing is adding 4 when we don't want to send the second UUID.)
+
+{% include note.html content="You can override AMENU 0 or AMENU 1 and make [ADJUST] appear for a specific submenu (see [here](http://avsitter.com/qa/652))." %}
+
+### SEQUENCE
+Creates a button that starts a sequence specified in the AVP_sequence_settings notecard. See [sequence instructions](/avsitterplus_sequence.html) for details. e.g.
+
+    SEQUENCE Scene1
+
+## Example Notecards
+
+Following are some example notecards, to help with understanding the menu structure. The position/rotation data lines have been omitted.
+
+### One SITTER
+A notecard for one SITTER, and a choice of two poses.
+
+```
+POSE Sit1|animation1
+POSE Sit2|animation2
 ```
 
-or, on Apple macOS:
+### Two SITTERs
+A notecard for two SITTERs, and a choice of two poses each.
 
-```shell
-eval "$(/usr/local/bin/brew shellenv)"
+```
+SITTER 0
+POSE Sit1|animation1
+POSE Sit2|animation2
+
+SITTER 1
+POSE Sit1|animation1
+POSE Sit2|animation2
 ```
 
-**[Note:]** Asciiville testing has not revealed any issue with duplicate packages other than needlessly consumed disk space. It might be argued that the risk of removing duplicate system packages outweighs the benefit of recovering some disk space.
+### Three SITTERs
+A notecard for three SITTERs, with singles poses.
 
-In addition to the regular system administration task of updating installed
-packages with the native package manager (e.g. `sudo apt update` followed by
-`sudo apt upgrade` or `sudo dnf update`), it is recommended to also update
-Homebrew regularly. Note that with Homebrew it is not necessary to use `sudo`:
-
-```shell
-# Update all package definitions (formulae) and Homebrew itself
-brew update
-# List which of your installed packages (kegs) are outdated
-brew outdated
-# Upgrade everything
-brew upgrade
-# Upgrade a specific formula
-brew upgrade <formula>
 ```
+SITTER 0
+POSE Sit1|animation1
+POSE Sit2|animation2
+
+SITTER 1
+POSE Sit1|animation1
+POSE Sit2|animation2
+
+SITTER 2
+POSE Sit1|animation1
+POSE Sit2|animation2
+```
+
+### Two SITTERs with Couples
+A notecard for two SITTERs, with singles and couples poses.
+
+```
+SITTER 0
+POSE Sit1|animation1
+POSE Sit2|animation2
+SYNC Couples1|hug_Female
+SYNC Couples2|kiss_Female
+
+SITTER 1
+POSE Sit1|animation1
+POSE Sit2|animation2
+SYNC Couples1|hug_Male
+SYNC Couples2|kiss_Male
+```
+
+### One SITTER with Submenus
+An example of submenus "Sitting" and "Laying".
+
+```
+TOMENU Sitting
+TOMENU Laying
+
+MENU Sitting
+POSE Sit1|animation1
+POSE Sit2|animation2
+
+MENU Laying
+POSE Lay1|animation3
+POSE Lay2|animation4
+```
+
+### Two SITTERs with Submenus
+Multiple submenus in each SITTER. Note the "Laying" and "Kissing" submenus in each SITTER are within the "Couples" submenu.
+
+```
+SITTER 0
+TOMENU Singles
+TOMENU Couples
+
+MENU Singles
+POSE Sit1|animation1
+POSE Sit2|animation2
+
+MENU Couples
+TOMENU Laying
+TOMENU Kissing
+
+MENU Laying
+SYNC Lay1|couples1_Female
+SYNC Lay2|couples2_Female
+SYNC Lay3|couples3_Female
+
+MENU Kissing
+SYNC Kiss1|couples4_Female
+SYNC Kiss2|couples5_Female
+SYNC Kiss3|couples6_Female
+
+SITTER 1
+TOMENU Singles
+TOMENU Couples
+
+MENU Singles
+POSE Sit1|animation1
+POSE Sit2|animation2
+
+MENU Couples
+TOMENU Laying
+TOMENU Kissing
+
+MENU Laying
+SYNC Lay1|couples1_Male
+SYNC Lay2|couples2_Male
+SYNC Lay3|couples3_Male
+
+MENU Kissing
+SYNC Kiss1|couples4_Male
+SYNC Kiss2|couples5_Male
+SYNC Kiss3|couples6_Male
+```
+
+{% include important.html content="For further notecard examples, see the notecards inside the examples provided to you in the AVsitterPlus Examples [BOX]." %}
+
+## "Built-In" animation sequence
+
+You can play animations in a series simply by adding extra animations to the [POSE](/avsitterplus_avp_positions.html#pose) (or [SYNC](/avsitterplus_avp_positions.html#sync)) commands. The animations all share the same position/rotation in the notecard, therefore they *must* be designed to be played together. This can be a continuous scene OR simply regular looped animations that were made as a sequence compatible set (all using use the same position/rotation).
+
+The format for the notecard is as follows:
+
+    POSE <menu_name>|<animation>|<duration>|<animation>|<duration>|<animation>|<duration> ...
+
+or
+
+    SYNC <menu_name>|<animation>|<duration>|<animation>|<duration>|<animation>|<duration> ...
+
+e.g.
+
+    POSE Solo-SEQ|anim1|30|anim2|30|anim3|30
+
+When "Solo-SEQ" is selected, the animations will cycle between anim1, anim2 and anim3, playing each for 30 seconds.
+
+Usually a sequence will loop, but if a dash ( - ) is entered instead of a duration then the sequence will stop after playing. e.g.
+
+    POSE Solo-SEQ|anim1|30|anim2|-
+
+{% include important.html content="Be sure to examine the sequence furniture examples provided in the AVsitterPlus Examples [BOX]." %}
+
+{% include important.html content="For an alternate sequence method, see the [AVP_sequence&trade;](/avsitterplus_sequence.html) script." %}
+
+## Auto-assign by gender
+Determining the gender of an avatar's shape is [now possible](http://wiki.secondlife.com/wiki/OBJECT_BODY_SHAPE_TYPE), and can be used for automatic sitter and default pose assignment in AVsitterPlus. The gender of an avatar's shape can be set from the Appearance Editor in the SL viewer.
+
+### SITTER assignment
+You can designate a [SITTER](/avsitterplus_avp_positions.html#sitter) for male/female shaped avatars by adding an "M" or "F" after the sitter name. When an avatar sits, they will be assigned to the first unoccupied sitter that matches the gender of their shape, if available. e.g:
+
+```
+SITTER 0|Female seat|F
+...
+
+SITTER 1|Male seat|M
+...
+```
+
+If the seat is not gender specific, then don't assign a gender. e.g:
+
+```
+SITTER 2|Friend seat
+...
+```
+
+{% include important.html content="SITTER assignment will not work in cases where there are [SET](/avsitterplus_sittargets.html) defined. Support for this may be added in future." %}
+
+### Pose assignment
+Normally, the default pose to play will be the first in the sitter's menu. However, you can specify a different [POSE](/avsitterplus_avp_positions.html#pose) or [SYNC](/avsitterplus_avp_positions.html#sync) as the default for male/female shaped avatars by adding an "M" or "F" after the animation file name. e.g:
+
+```
+POSE SitF|Sit1|M
+POSE SitM|Sit2|F
+```
+
+## Variable speed animations
+
+You can include animations of variable speed by naming them with + or - at the end of the file name and including them in the furniture. These files will be used in place of the default when the speed setting is changed by use of << Softer & Harder >> buttons.
+
+e.g. if you have a POSE/SYNC as follows:
+
+    SYNC Walking|Walk01
+
+Then you can optionally include the animation files Walk01- (slower version) & Walk01+ (faster version) in addition to the Walk01 animation. Note, there should be no space between the animation name and the +/-.
+
+The << Softer & Harder >> buttons will only be shown in a submenu if &#124;V is added to the MENU line. e.g.
+
+    MENU Workout|V
+
+Pressing the << Softer & Harder >> buttons will change the speed to the slower/faster animations. The speed will remain set until changed or until all avatars stand up from the furniture.
+
+
+## Extra notecard commands
+Some additional notecard commands exist _([read here for more information](avsitterplus_SpecialCommands_AVP_Positions.html))_:
+
+- [HELPER](/avsitterplus_SpecialCommands_AVP_Positions.html#helper) - use the AVsitter1 style helper system, where you sit on the helper sticks.
+- [KFM](/avsitterplus_SpecialCommands_AVP_Positions.html#kfm) - if the object uses [llSetKeyframedMotion()](http://wiki.secondlife.com/wiki/LlSetKeyframedMotion).
+- [LROT](/avsitterplus_SpecialCommands_AVP_Positions.html#lrot) - positioning buttons to work relative to the local rotation of the root prim, instead of global co-ordinates.
+- [WARN](/avsitterplus_SpecialCommands_AVP_Positions.html#warn) - disable the warning when there aren't enough prims for all sitters or checks for prop permissions.
+- DFLT 0 - don't revert to the default pose when all avatars stand (unless the last pose was a SYNC pose).
+- NOWIPE - tells the scripts not to wipe sittargets in other prims (use only if you have a good reason as you may end up with prims that have unnecessary SitTargets).
+
+{% include important.html content="Extra commands are not part of settings [DUMP] so you would need to remember to leave them at the top of your notecard." %}
+
+{% include links.html %}
